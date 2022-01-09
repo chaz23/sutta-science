@@ -3,6 +3,7 @@ library(tidyr)
 library(httr)
 library(purrr)
 library(stringi)
+library(readr)
 
 
 data_path <- "https://raw.githubusercontent.com/suttacentral/sc-data/master/dictionaries/complex/en/pli2en_dppn.json"
@@ -65,31 +66,36 @@ sutta_characters <- sutta_proper_names %>%
   mutate(word_trans = stri_trans_general(word, "latin-ascii"))
 
 
-
-sutta_characters[8,] %>% pull(desc) 
+write_tsv(sutta_characters, "./data/dataset_4/sutta_characters.tsv")
   
 
-GET("https://api.pts.dhamma-dana.de/v1/lookup/sn/0/123.json") %>% 
-  content(as = "parsed", type = "application/json")
+# GET("https://api.pts.dhamma-dana.de/v1/lookup/sn/0/123.json") %>% 
+#   content(as = "parsed", type = "application/json")
+# 
+# 
+# "<dd><p>One of the ten ancient seers who conducted great sacrifices and were versed in Vedic lore. The others being Aṭṭhaka, Vāmaka, Vāmadeva, Vessāmitta, Yamataggi, Bhāradvāja, Vāseṭṭha, Kassapa and Bhagu. The list occurs in several places. <span class='ref'>Vin.i.245</span> <span class='ref'>AN.iii.224</span> <span class='ref'>MN.ii.169</span> <span class='ref'>MN.ii.200</span></p><p>The same ten are also mentioned as being composers and reciters of the Vedas. <span class='ref'>DN.i.238</span></p></dd>" %>% regmatches(., gregexec("(?<=class='ref'>)(?:.*?)(?=</span>)", ., perl = TRUE)) %>% unlist() %>% as_tibble()
 
-
-"<dd><p>One of the ten ancient seers who conducted great sacrifices and were versed in Vedic lore. The others being Aṭṭhaka, Vāmaka, Vāmadeva, Vessāmitta, Yamataggi, Bhāradvāja, Vāseṭṭha, Kassapa and Bhagu. The list occurs in several places. <span class='ref'>Vin.i.245</span> <span class='ref'>AN.iii.224</span> <span class='ref'>MN.ii.169</span> <span class='ref'>MN.ii.200</span></p><p>The same ten are also mentioned as being composers and reciters of the Vedas. <span class='ref'>DN.i.238</span></p></dd>" %>% regmatches(., gregexec("(?<=class='ref'>)(?:.*?)(?=</span>)", ., perl = TRUE)) %>% unlist() %>% as_tibble()
-
-translate_pts_refs <- function (pts_ref) {
-  refs <- pts_ref %>% 
-    regmatches(., gregexec("(?<=class='ref'>)(?:.*?)(?=</span>)", ., perl = TRUE)) %>% 
-    unlist() %>% 
-    as_tibble()
-  
-  refs %>% 
-    rename(pts_ref = value) %>% 
-    mutate(seg_id = map_chr(pts_ref, ~ sub("(?=(<em|f|;|-|\U{2013})).*$", "", ., perl = TRUE)))
-}
-
-sutta_characters %>% 
-  mutate(refs = map(desc, translate_pts_refs)) %>% 
-  unnest(cols = refs) %>% View()
-  # filter(!grepl("^(MN|SN|DN|AN|Vin|Thag|Thig|Snp|Ud|It|Dhp|Aii|A.i)", value))
+# translate_pts_refs <- function (pts_ref) {
+#   refs <- pts_ref %>% 
+#     regmatches(., gregexec("(?<=class='ref'>)(?:.*?)(?=</span>)", ., perl = TRUE)) %>% 
+#     unlist() %>% 
+#     as_tibble()
+#   
+#   refs %>% 
+#     rename(pts_ref = value) %>% 
+#     mutate(seg_id = map_chr(pts_ref, ~ sub("(?=(<em|f|;|-|\U{2013})).*$", "", ., perl = TRUE)))
+# }
+# 
+# test <- sutta_characters %>% 
+#   mutate(refs = map(desc, translate_pts_refs)) %>% 
+#   unnest(cols = refs)
+#   # filter(!grepl("^(MN|SN|DN|AN|Vin|Thag|Thig|Snp|Ud|It|Dhp|Aii|A.i)", value))
+# 
+# test %>% 
+#   mutate(test = stringr::str_split(seg_id, "\\."),
+#          test = map_dbl(test, length)) %>% 
+#   filter(grepl("^(SN|DN|MN|AN)", seg_id)) %>% View()
+#   filter(test != 3)
 
 # sutta_proper_names %>% 
 #   mutate(row_num = row_number()) %>% 
@@ -107,5 +113,9 @@ sutta_characters %>%
 
 # readr::write_tsv(sutta_characters, "./sutta-characters.tsv")
 
-"DN.i.85–86" %>% sub("(?=(<em|f|;|-|\U{2013})).*$", "", ., perl = TRUE)
+# "DN.i.85–86" %>% sub("(?=(<em|f|;|-|\U{2013})).*$", "", ., perl = TRUE)
 
+
+# MN: MN86
+# SN: SN.348-352, SN.163
+# Thag: Everything except "Thag.776."

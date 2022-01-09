@@ -65,6 +65,9 @@ sutta_data <- raw_sutta_data %>%
   mutate(segment_text = str_trim(segment_text)) %>% 
   filter(segment_text != "") %>% 
   
+  # Remove subheaders.
+  filter(sentence_id != "0") %>% 
+  
   # Rearrange data in order of suttas.
   mutate(discourse_num = str_replace(discourse_num, "-[0-9]{0,}", "")) %>% 
   mutate(discourse_num_copy = discourse_num) %>% 
