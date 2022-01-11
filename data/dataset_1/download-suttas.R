@@ -1,4 +1,4 @@
-# A script to download the suttas. ----------------------------------------
+# Script to download the sutta pitaka. ------------------------------------
 
 library(purrr)
 library(gh)
@@ -13,19 +13,19 @@ if (calls_remaining < 72) stop("API calls insufficient.")
 
 sutta_list_root <- "/repos/suttacentral/bilara-data/contents/translation/en/sujato/sutta/"
 
-nikayas <- c("dn", "mn", "sn", "an")
+nikayas <- c("dn", "mn", "sn", "an", "kn")
 
 sutta_list <- unlist(map(sutta_list_root, paste0, nikayas))
 
 resp <- map(paste0("GET ", sutta_list), gh)
 names(resp) <- nikayas
 
-raw_content_url <- function (x) {
-  lapply(x, function (x) {
-    if (!is.null(x$download_url)) {
-      x$download_url
+raw_content_url <- function (resp) {
+  lapply(resp, function (x) {
+    if (is.null(x$download_url)) {
+      raw_content_url(gh(x$url)) 
     } else {
-      lapply(gh(x$url), function (x) x$download_url)
+      x$download_url
     }
   })
 }
