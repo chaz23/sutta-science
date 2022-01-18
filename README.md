@@ -38,16 +38,21 @@ Available formats: `.Rda`, `.tsv`.
 #### Dataset 3 
 **Tidied representation of Bhante Sujato's translation of the 4 nikayas** (`dn`, `mn`, `sn`, `an`).  
 
+This is an augmented version of the raw version. Some new features (eg: sutta title, sutta number) have been added, headers and subheaders have been removed, blank rows omitted, and data rearranged.
+
 Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `nikaya`, `sutta_num`, `title`.  
 Available formats: `.Rda`, `.tsv`.  
 
 #### Dataset 4 
-**Blurbs for each sutta and associated vagga/samyutta in the 4 nikayas** (`dn`, `mn`, `sn`, `an`).  
-Available formats: `.Rda`, `.tsv`.  
-Columns: `title`, `blurb`. 
+**Tidied representation of Bhante Sujato's translation of the Khuddaka nikaya** (`kn`).  
+
+This is an augmented version of the raw version. Some new features (eg: sutta title, sutta number) have been added, headers and subheaders have been removed, blank rows omitted, and data rearranged.
+
+Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `nikaya`, `sutta_num`, `title`.  
+Available formats: `.Rda`, `.tsv`.
 
 ## Tools and References
 
-For info on the SuttaCentral segment numbering system:
-* See discussion on [Discourse](https://discourse.suttacentral.net/t/making-sense-of-the-segment-numbering-system/23121).
-* See bilara-data [wiki](https://github.com/suttacentral/bilara-data/wiki/Bilara-segment-number-spec).
+* For info on the SuttaCentral segment numbering system:
+    * See discussion on [Discourse](https://discourse.suttacentral.net/t/making-sense-of-the-segment-numbering-system/23121).
+    * See bilara-data [wiki](https://github.com/suttacentral/bilara-data/wiki/Bilara-segment-number-spec).
