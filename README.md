@@ -1,9 +1,15 @@
 # sutta-science
 
+[SuttaCentral](https://github.com/suttacentral) is doing amazing work making Buddhist source texts and translations open-source and freely available to all. :tada: 
+
+However, for a developer it can be a pain to navigate the 
+
 Datasets and their associated script/s (if any) are accessible via subdirectories of the `data` directory. The subdirectories will each have the naming convention `dataset_[n]`.
 
 **References:**
 * See discussion about SuttaCentral segment numbering system [here](https://discourse.suttacentral.net/t/making-sense-of-the-segment-numbering-system/23121).
+
+----
 
 **dataset_1**: Raw download of Bhante Sujato's translations of the Sutta Pitaka. 
 
@@ -21,7 +27,7 @@ Available formats: `.Rda`, `.tsv`.
 
 **dataset_3**: Tidied representation of Bhante Sujato's translation of the 4 nikayas (`dn`, `mn`, `sn`, `an`).  
 
-Table of data with columns `segment_id`, `segment_text`, `discourse`, `section_num`, `segment_num`, `nikaya`, `discourse_num`, `title`.  
+Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `nikaya`, `sutta_num`, `title`.  
 Available formats: `.Rda`, `.tsv`.  
 
 **dataset_4**: Blurbs for each sutta and associated vagga/samyutta in the DN, MN, SN and AN.  
