@@ -8,12 +8,12 @@ This project aims to solve some of these problems - i.e collating, cleaning, fea
 
 ## Contents
 
-* [Datasets](#datasets).
-    - [Raw download of Bhante Sujato's translations of the Sutta Pitaka.](#dataset_1) 
-    - [Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka.](#dataset_2)
-    - [Tidied representation of Bhante Sujato's translation of the 4 nikayas.](#dataset_3)
-    - [Blurbs for each sutta and associated vagga/samyutta in the 4 nikayas.](#dataset_4)
-* [References](#references).
+* [Datasets](#datasets)
+    - [Raw download of Bhante Sujato's translations of the Sutta Pitaka](#dataset-1) 
+    - [Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka](#dataset-2)
+    - [Tidied representation of Bhante Sujato's translation of the 4 nikayas](#dataset-3)
+    - [Blurbs for each sutta and associated vagga/samyutta in the 4 nikayas](#dataset-4)
+* [Tools and references](#tools-and-references)
 
 ## Datasets
 
@@ -46,8 +46,8 @@ Available formats: `.Rda`, `.tsv`.
 Available formats: `.Rda`, `.tsv`.  
 Columns: `title`, `blurb`. 
 
-## References
+## Tools and References
 
-* SuttaCentral segment numbering system.
-    - See discussion on [Discourse](https://discourse.suttacentral.net/t/making-sense-of-the-segment-numbering-system/23121).
-    - See bilara-data [wiki](https://github.com/suttacentral/bilara-data/wiki/Bilara-segment-number-spec).
+For info on the SuttaCentral segment numbering system:
+* See discussion on [Discourse](https://discourse.suttacentral.net/t/making-sense-of-the-segment-numbering-system/23121).
+* See bilara-data [wiki](https://github.com/suttacentral/bilara-data/wiki/Bilara-segment-number-spec).
