@@ -43,6 +43,26 @@ raw_sutta_data <- download_urls %>%
   rename(segment_id = name,
          segment_text = value)
 
+dn_sutta_data <- raw_sutta_data %>% 
+  filter(grepl("^dn", segment_id))
+
+mn_sutta_data <- raw_sutta_data %>% 
+  filter(grepl("^mn", segment_id))
+
+sn_sutta_data <- raw_sutta_data %>% 
+  filter(grepl("^sn", segment_id))
+
+an_sutta_data <- raw_sutta_data %>% 
+  filter(grepl("^an", segment_id))
+
+kn_sutta_data <- raw_sutta_data %>% 
+  filter(!grepl("^(dn|mn|sn|an)", segment_id)) 
+
 # Save sutta data.
 save(raw_sutta_data, file = "./data/dataset_1/raw_sutta_data.Rda")
-write_tsv(raw_sutta_data, file = "./data/dataset_1/raw_sutta_data.tsv")
+
+write_tsv(dn_sutta_data, file = "./data/dataset_1/raw_dn_sutta_data.tsv")
+write_tsv(mn_sutta_data, file = "./data/dataset_1/raw_mn_sutta_data.tsv")
+write_tsv(sn_sutta_data, file = "./data/dataset_1/raw_sn_sutta_data.tsv")
+write_tsv(an_sutta_data, file = "./data/dataset_1/raw_an_sutta_data.tsv")
+write_tsv(kn_sutta_data, file = "./data/dataset_1/raw_kn_sutta_data.tsv")

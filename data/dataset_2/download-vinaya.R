@@ -43,6 +43,22 @@ raw_vinaya_data <- download_urls %>%
   rename(segment_id = name,
          segment_text = value)
 
+bi_vb_vinaya_data <- raw_vinaya_data %>% 
+  filter(grepl("bi-vb", segment_id))
+
+bu_vb_vinaya_data <- raw_vinaya_data %>% 
+  filter(grepl("bu-vb", segment_id))
+
+kd_vinaya_data <- raw_vinaya_data %>% 
+  filter(grepl("kd", segment_id))
+
+pvr_vinaya_data <- raw_vinaya_data %>% 
+  filter(grepl("pvr", segment_id))
+
 # Save vinaya data.
 save(raw_vinaya_data, file = "./data/dataset_2/raw_vinaya_data.Rda")
-write_tsv(raw_vinaya_data, file = "./data/dataset_2/raw_vinaya_data.tsv")
+
+write_tsv(bi_vb_vinaya_data, file = "./data/dataset_2/raw_bi_vb_vinaya_data.tsv")
+write_tsv(bu_vb_vinaya_data, file = "./data/dataset_2/raw_bu_vb_vinaya_data.tsv")
+write_tsv(kd_vinaya_data, file = "./data/dataset_2/raw_kd_vinaya_data.tsv")
+write_tsv(pvr_vinaya_data, file = "./data/dataset_2/raw_pvr_vinaya_data.tsv")

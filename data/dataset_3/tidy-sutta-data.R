@@ -1,4 +1,4 @@
-# Script to tidy sutta data for analysis. ---------------------------------
+# Script to tidy sutta data. ----------------------------------------------
 
 library(dplyr)
 library(stringr)
@@ -8,75 +8,85 @@ library(readr)
 
 load("./data/dataset_1/raw_sutta_data.Rda")
 
+
+split_seg_id <- function (seg_id) {
+  sutta <- str_extract(seg_id, "^.*(?=:)")
+  
+  num_id <- str_extract(seg_id, "(?<=:).*$")
+  
+  section_num <- num_id %>% str_extract("^.*(?=[.])")
+  segment_num <- num_id %>% str_extract("(?=[0-9]+)[0-9]+$")
+  
+  paste(sutta, section_num, segment_num, sep = "|")
+}
+
+
 sutta_data <- raw_sutta_data %>% 
-  mutate(segment_id_copy = segment_id) %>% 
+  # Keep rows belonging to DN, MN, SN and AN.
+  filter(grepl("(dn|mn|sn|an)[0-9]", segment_id)) %>% 
   
-  # Split segment_id into discourse and ID.
-  separate(segment_id_copy, into = c("discourse", "id"), sep = ":") %>% 
+  # Split segment_id into sutta, section number and segment number.
+  mutate(segment_id_copy = map_chr(segment_id, split_seg_id)) %>% 
+  separate(segment_id_copy, into = c("sutta", "section_num", "segment_num"), sep = "[|]") %>% 
   
-  # Extract nikaya and discourse number.
-  mutate(nikaya = str_extract(discourse, "[a-z][a-z]"),
-         discourse_num = str_remove(discourse, "[a-z][a-z]")) %>% 
-  
-  # Extract paragraph and sentence IDs.
-  separate(id, into = c("paragraph_id", "sentence_id"), sep = "\\.", extra = "merge") %>% 
+  # Extract nikaya and sutta number.
+  mutate(nikaya = str_extract(sutta, "[a-z]+"),
+         sutta_num = str_remove(sutta, "[a-z]+")) %>% 
   
   # Extract sutta titles.
   
   # DN:
-  # paragraph_id = 0
-  #   sentence_id = 1 -> sutta number
-  #   sentence_id = 2 -> sutta title
+  # section_num = 0
+  #   segment_num = 1 -> sutta number
+  #   segment_num = 2 -> sutta title
   
   # MN:
-  # paragraph_id = 0
-  #   sentence_id = 1 -> sutta number
-  #   sentence_id = 2 -> sutta title
+  # section_num = 0
+  #   segment_num = 1 -> sutta number
+  #   segment_num = 2 -> sutta title
   
   # SN:
-  # paragraph_id = 0
-  #   sentence_id = 1 -> samyutta number
-  #   sentence_id = 2 -> vagga title
-  #   sentence_id = 3 -> sutta title
+  # section_num = 0
+  #   segment_num = 1 -> samyutta number
+  #   segment_num = 2 -> vagga title
+  #   segment_num = 3 -> sutta title
   
   # AN:
-  # paragraph_id = 0
-  #   sentence_id = 1 -> book number
-  #   sentence_id = 2 -> vagga title
-  #   sentence_id = 3 -> sutta title
-  #   sentence_id = 4 -> sutta subtitle
+  # section_num = 0
+  #   segment_num = 1 -> book number
+  #   segment_num = 2 -> vagga title
+  #   segment_num = 3 -> sutta title
+  #   segment_num = 4 -> sutta subtitle
   
   mutate(title = case_when(nikaya %in% c("dn", "mn") &
-                             paragraph_id == "0" &
-                             sentence_id == "2" ~ segment_text,
+                             section_num == "0" &
+                             segment_num == "2" ~ segment_text,
                            nikaya %in% c("sn", "an") &
-                             paragraph_id == "0" &
-                             sentence_id == "3" ~ segment_text,
+                             section_num == "0" &
+                             segment_num == "3" ~ segment_text,
                            TRUE ~ NA_character_)) %>% 
   fill(title, .direction = "down") %>% 
-  filter(paragraph_id != "0") %>% 
-  separate(title, into = c("title1", "title2"), sep = "\\.") %>% 
-  mutate(title1 = case_when(is.na(title2) ~ title1,
-                            TRUE ~ title2),
-         sutta_title = title1) %>% 
-  select(-title1, -title2) %>% 
+  filter(section_num != "0") %>% 
+  mutate(title = str_extract(title, "(?=[a-zA-Z]+).*$"),
+         title = str_trim(title)) %>% 
   
   # Remove blank rows.
   mutate(segment_text = str_trim(segment_text)) %>% 
   filter(segment_text != "") %>% 
   
   # Remove subheaders.
-  filter(sentence_id != "0") %>% 
+  filter(segment_num != "0") %>% 
+  filter(!grepl(".*[.]0$", section_num)) %>% 
   
   # Rearrange data in order of suttas.
-  mutate(discourse_num = str_replace(discourse_num, "-[0-9]{0,}", "")) %>% 
-  mutate(discourse_num_copy = discourse_num) %>% 
-  separate(discourse_num_copy, into = c("id1", "id2")) %>% 
+  mutate(sutta_num_copy = str_replace(sutta_num, "-[0-9]{0,}", "")) %>% 
+  separate(sutta_num_copy, into = c("id1", "id2")) %>% 
   replace_na(list(id2 = 0)) %>%
   mutate(id1 = as.numeric(id1),
          id2 = as.numeric(id2)) %>%
   arrange(factor(nikaya, levels = c("dn", "mn", "sn", "an")), id1, id2) %>% 
   select(-id1, -id2)
+  
 
 dn_sutta_data <- sutta_data %>% filter(nikaya == "dn")
 mn_sutta_data <- sutta_data %>% filter(nikaya == "mn")
@@ -84,9 +94,9 @@ sn_sutta_data <- sutta_data %>% filter(nikaya == "sn")
 an_sutta_data <- sutta_data %>% filter(nikaya == "an")
 
 # Save to disk.
-save(sutta_data, file = "./data/dataset_2/sutta_data.Rda")
+save(sutta_data, file = "./data/dataset_3/sutta_data.Rda")
 
-write_tsv(dn_sutta_data, "./data/dataset_2/dn_sutta_data.tsv")
-write_tsv(mn_sutta_data, "./data/dataset_2/mn_sutta_data.tsv")
-write_tsv(sn_sutta_data, "./data/dataset_2/sn_sutta_data.tsv")
-write_tsv(an_sutta_data, "./data/dataset_2/an_sutta_data.tsv")
+write_tsv(dn_sutta_data, "./data/dataset_3/dn_sutta_data.tsv")
+write_tsv(mn_sutta_data, "./data/dataset_3/mn_sutta_data.tsv")
+write_tsv(sn_sutta_data, "./data/dataset_3/sn_sutta_data.tsv")
+write_tsv(an_sutta_data, "./data/dataset_3/an_sutta_data.tsv")
