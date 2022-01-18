@@ -12,7 +12,7 @@ This project aims to solve some of these problems - i.e collating, cleaning, fea
     - [Raw download of Bhante Sujato's translations of the Sutta Pitaka](#dataset-1) 
     - [Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka](#dataset-2)
     - [Tidied representation of Bhante Sujato's translation of the 4 nikayas](#dataset-3)
-    - [Blurbs for each sutta and associated vagga/samyutta in the 4 nikayas](#dataset-4)
+    - [Tidied representation of Bhante Sujato's translation of the Khuddaka nikaya](#dataset-4)
 * [Tools and references](#tools-and-references)
 
 ## Datasets
