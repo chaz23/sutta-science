@@ -9,14 +9,17 @@ This project aims to solve some of these problems - i.e collating, cleaning, fea
 ## Contents
 
 * [Datasets](#datasets).
-    - [Raw download of Bhante Sujato's translations of the Sutta Pitaka.](#dataset_1:) 
+    - [Raw download of Bhante Sujato's translations of the Sutta Pitaka.](#dataset_1) 
+    - [Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka.](#dataset_2)
+    - [Tidied representation of Bhante Sujato's translation of the 4 nikayas.](#dataset_3)
+    - [Blurbs for each sutta and associated vagga/samyutta in the 4 nikayas.](#dataset_4)
 * [References](#references).
 
 ## Datasets
 
 Datasets and their associated script/s (if any) are accessible via subdirectories of the `data` directory. The subdirectories will each have the naming convention `dataset_[n]`.
 
-#### Dataset 1: 
+#### Dataset 1 
 **Raw download of Bhante Sujato's translations of the Sutta Pitaka.**
 
 This includes translations of the 4 main nikayas (`dn`, `mn`, `sn`, `an`) in full, as well as select texts of the Khuddaka Nikaya (`kn`). Available texts of the `kn` include the Dhammapada (`dhp`), Itivuttaka (`iti`), Khuddakapatha (`kp`), Sutta Nipata (`snp`), Theragatha (`thag`), Therigatha (`thig`) and Udana (`ud`). Aside from the Jatakas, these are all considered to be early texts of the KN. The Khuddakapatha is considered a later text.
@@ -24,19 +27,22 @@ This includes translations of the 4 main nikayas (`dn`, `mn`, `sn`, `an`) in ful
 Table of data with columns `segment_id` and `segment_text`.  
 Available formats: `.Rda`, `.tsv`.  
 
-**dataset_2**: Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka.
+#### Dataset 2 
+**Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka.**
 
 This includes translations of select texts from the Theravada Vinaya Pitaka (`pli-tv-vi`). Texts include the Bhikkhu Vibhanga (`pli-tv-bu-vb`), Bhikkhuni Vibhanga (`pli-tv-bi-vb`), Khandhaka (`pli-tv-kd`) and Parivara (`pli-tv-pvr`).
 
-Table of data with columns `segment_id` and `segment_text`.
+Table of data with columns `segment_id` and `segment_text`.  
 Available formats: `.Rda`, `.tsv`.
 
-**dataset_3**: Tidied representation of Bhante Sujato's translation of the 4 nikayas (`dn`, `mn`, `sn`, `an`).  
+#### Dataset 3 
+**Tidied representation of Bhante Sujato's translation of the 4 nikayas** (`dn`, `mn`, `sn`, `an`).  
 
 Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `nikaya`, `sutta_num`, `title`.  
 Available formats: `.Rda`, `.tsv`.  
 
-**dataset_4**: Blurbs for each sutta and associated vagga/samyutta in the DN, MN, SN and AN.  
+#### Dataset 4 
+**Blurbs for each sutta and associated vagga/samyutta in the 4 nikayas** (`dn`, `mn`, `sn`, `an`).  
 Available formats: `.Rda`, `.tsv`.  
 Columns: `title`, `blurb`. 
 
