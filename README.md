@@ -8,8 +8,9 @@ This project aims to solve some of these problems - i.e collating, cleaning, fea
 
 ## Contents
 
-[Datasets](#datasets)
-[References](#references)
+* [Datasets](#datasets).
+    - [Raw download of Bhante Sujato's translations of the Sutta Pitaka.](#dataset_3) 
+* [References](#references).
 
 ## Datasets
 
@@ -44,5 +45,5 @@ Columns: `title`, `blurb`.
 ## References
 
 * SuttaCentral segment numbering system.
-** See discussion on [Discourse](https://discourse.suttacentral.net/t/making-sense-of-the-segment-numbering-system/23121).
-** See bilara-data [wiki](https://github.com/suttacentral/bilara-data/wiki/Bilara-segment-number-spec)
+    - See discussion on [Discourse](https://discourse.suttacentral.net/t/making-sense-of-the-segment-numbering-system/23121).
+    - See bilara-data [wiki](https://github.com/suttacentral/bilara-data/wiki/Bilara-segment-number-spec).
