@@ -8,7 +8,7 @@ library(readr)
 load("./data/dataset_1/raw_sutta_data.Rda")
 
 
-sutta_data <- raw_sutta_data %>% 
+kn_sutta_data <- raw_sutta_data %>% 
   # Keep rows belonging to KN.
   filter(!grepl("(dn|mn|sn|an)[0-9]", segment_id)) %>% 
   
@@ -75,6 +75,6 @@ sutta_data <- raw_sutta_data %>%
 
 
 # Save to disk.
-save(sutta_data, file = "./data/dataset_4/kn_sutta_data.Rda")
+save(kn_sutta_data, file = "./data/dataset_4/kn_sutta_data.Rda")
 
-write_tsv(sutta_data, "./data/dataset_4/kn_sutta_data.tsv")
+write_tsv(kn_sutta_data, "./data/dataset_4/kn_sutta_data.tsv")
