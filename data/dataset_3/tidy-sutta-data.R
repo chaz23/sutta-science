@@ -29,8 +29,8 @@ sutta_data <- raw_sutta_data %>%
   mutate(segment_id_copy = map_chr(segment_id, split_seg_id)) %>% 
   separate(segment_id_copy, into = c("sutta", "section_num", "segment_num"), sep = "[|]") %>% 
   
-  # Extract nikaya and sutta number.
-  mutate(nikaya = str_extract(sutta, "[a-z]+"),
+  # Extract nikaya (collection) and sutta number.
+  mutate(collection = str_extract(sutta, "[a-z]+"),
          sutta_num = str_remove(sutta, "[a-z]+")) %>% 
   
   # Extract sutta titles.
@@ -58,10 +58,10 @@ sutta_data <- raw_sutta_data %>%
   #   segment_num = 3 -> sutta title
   #   segment_num = 4 -> sutta subtitle
   
-  mutate(title = case_when(nikaya %in% c("dn", "mn") &
+  mutate(title = case_when(collection %in% c("dn", "mn") &
                              section_num == "0" &
                              segment_num == "2" ~ segment_text,
-                           nikaya %in% c("sn", "an") &
+                           collection %in% c("sn", "an") &
                              section_num == "0" &
                              segment_num == "3" ~ segment_text,
                            TRUE ~ NA_character_)) %>% 
@@ -84,14 +84,14 @@ sutta_data <- raw_sutta_data %>%
   replace_na(list(id2 = 0)) %>%
   mutate(id1 = as.numeric(id1),
          id2 = as.numeric(id2)) %>%
-  arrange(factor(nikaya, levels = c("dn", "mn", "sn", "an")), id1, id2) %>% 
+  arrange(factor(collection, levels = c("dn", "mn", "sn", "an")), id1, id2) %>% 
   select(-id1, -id2)
   
 
-dn_sutta_data <- sutta_data %>% filter(nikaya == "dn")
-mn_sutta_data <- sutta_data %>% filter(nikaya == "mn")
-sn_sutta_data <- sutta_data %>% filter(nikaya == "sn")
-an_sutta_data <- sutta_data %>% filter(nikaya == "an")
+dn_sutta_data <- sutta_data %>% filter(collection == "dn")
+mn_sutta_data <- sutta_data %>% filter(collection == "mn")
+sn_sutta_data <- sutta_data %>% filter(collection == "sn")
+an_sutta_data <- sutta_data %>% filter(collection == "an")
 
 # Save to disk.
 save(sutta_data, file = "./data/dataset_3/sutta_data.Rda")
