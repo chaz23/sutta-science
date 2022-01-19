@@ -13,6 +13,7 @@ This project aims to solve some of these problems - i.e collating, cleaning, fea
     - [Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka](#dataset-2)
     - [Tidied representation of Bhante Sujato's translation of the 4 nikayas](#dataset-3)
     - [Tidied representation of Bhante Sujato's translation of the Khuddaka nikaya](#dataset-4)
+    - [Tidied representation of Ajahn Brahmali's translation of the Vinaya Pitaka](#dataset-5)
 * [Tools and references](#tools-and-references)
 
 ## Datasets
@@ -49,6 +50,14 @@ Available formats: `.Rda`, `.tsv`.
 This is an augmented version of the raw version. Some new features (eg: sutta title, sutta number) have been added, headers and subheaders have been removed, blank rows omitted, and data rearranged.
 
 Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `nikaya`, `sutta_num`, `title`.  
+Available formats: `.Rda`, `.tsv`.
+
+#### Dataset 5 
+**Tidied representation of Ajahn Brahmali's translation of the Vinaya Pitaka** (`pli-tv-vi`).  
+
+This is an augmented version of the raw version (dataset_2). Some new features (eg: sutta title, sutta number) have been added, headers and subheaders have been removed, blank rows omitted, and data rearranged.
+
+Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `vin_category`, `sutta_num`, `title`.  
 Available formats: `.Rda`, `.tsv`.
 
 ## Tools and References
