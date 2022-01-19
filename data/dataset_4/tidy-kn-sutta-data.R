@@ -45,12 +45,16 @@ sutta_data <- raw_sutta_data %>%
   # ud: [section_num].[segment_num] = 0.2
   # kp: [section_num].[segment_num] = 0.2
   
-  mutate(title = case_when(nikaya %in% c("dhp") & segment_num == "0.3" ~ segment_text,
-                           nikaya %in% c("thig") & section_num == "0" &
+  mutate(title = case_when(nikaya %in% c("dhp") & 
+                             segment_num == "0.3" ~ segment_text,
+                           nikaya %in% c("thig") & 
+                             section_num == "0" &
                              segment_num == "3" ~ segment_text,
-                           nikaya %in% c("iti", "thag") & section_num == "0" & 
+                           nikaya %in% c("iti", "thag") & 
+                             section_num == "0" & 
                              segment_num == "4" ~ segment_text,
-                           nikaya %in% c("snp", "ud", "kp") & section_num == "0" & 
+                           nikaya %in% c("snp", "ud", "kp") & 
+                             section_num == "0" & 
                              segment_num == "2" ~ segment_text,
                            TRUE ~ NA_character_)) %>% 
   fill(title, .direction = "down") %>% 
