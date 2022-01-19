@@ -30,8 +30,8 @@ sutta_data <- raw_sutta_data %>%
                                  grepl("thag1.1:1.0.", segment_id) ~ str_extract(segment_id, "0\\.[0-9]+$"),
                                  TRUE ~ str_extract(segment_id, "(?<=[:.])[0-9]+$"))) %>% 
   
-  # Extract nikaya and sutta number.
-  mutate(nikaya = str_extract(sutta, "[a-z]+"),
+  # Extract nikaya (collection) and sutta number.
+  mutate(collection = str_extract(sutta, "[a-z]+"),
          sutta_num = str_remove(sutta, "[a-z]+")) %>% 
   
   # Extract sutta titles.
@@ -45,15 +45,15 @@ sutta_data <- raw_sutta_data %>%
   # ud: [section_num].[segment_num] = 0.2
   # kp: [section_num].[segment_num] = 0.2
   
-  mutate(title = case_when(nikaya %in% c("dhp") & 
+  mutate(title = case_when(collection %in% c("dhp") & 
                              segment_num == "0.3" ~ segment_text,
-                           nikaya %in% c("thig") & 
+                           collection %in% c("thig") & 
                              section_num == "0" &
                              segment_num == "3" ~ segment_text,
-                           nikaya %in% c("iti", "thag") & 
+                           collection %in% c("iti", "thag") & 
                              section_num == "0" & 
                              segment_num == "4" ~ segment_text,
-                           nikaya %in% c("snp", "ud", "kp") & 
+                           collection %in% c("snp", "ud", "kp") & 
                              section_num == "0" & 
                              segment_num == "2" ~ segment_text,
                            TRUE ~ NA_character_)) %>% 
@@ -68,7 +68,7 @@ sutta_data <- raw_sutta_data %>%
   filter(!str_detect(segment_num, "0.")) %>% 
   
   # Rearrange data in order of suttas.
-  arrange(factor(nikaya, levels = c("dhp", "iti", "kp", "snp", "thag", "thig", "ud")), 
+  arrange(factor(collection, levels = c("dhp", "iti", "kp", "snp", "thag", "thig", "ud")), 
           as.numeric(sutta_num),
           as.numeric(section_num),
           as.numeric(segment_num))
