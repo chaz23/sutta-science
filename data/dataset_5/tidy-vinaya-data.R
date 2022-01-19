@@ -8,28 +8,6 @@ library(readr)
 
 load("./data/dataset_2/raw_vinaya_data.Rda")
 
-# Vinaya rule classes.
-vin_categories <- tribble(
-  ~ cat_abb,       ~ vin_category,
-  "pli-tv-bi-vb-as", "Adhikaranasamathā",
-  "pli-tv-bi-vb-np", "Nissaggiyā Pācittiyā",
-  "pli-tv-bi-vb-pc", "Pācittiyā",
-  "pli-tv-bi-vb-pd", "Pātidesanīyā",
-  "pli-tv-bi-vb-pj", "Pārājika",
-  "pli-tv-bi-vb-sk", "Sekhiyā",
-  "pli-tv-bi-vb-ss", "Sanghādisesā",
-  "pli-tv-bu-vb-as", "Adhikaranasamathā",
-  "pli-tv-bu-vb-ay", "Aniyata",
-  "pli-tv-bu-vb-np", "Nissaggiyā Pācittiyā",
-  "pli-tv-bu-vb-pc", "Pācittiyā",
-  "pli-tv-bu-vb-pd", "Pātidesanīyā",
-  "pli-tv-bu-vb-pj", "Pārājika",
-  "pli-tv-bu-vb-sk", "Sekhiyā",
-  "pli-tv-bu-vb-ss", "Sanghādisesā",
-  "pli-tv-kd" ,      "Khandhaka",
-  "pli-tv-pvr",      "Parivāra"
-)
-
 
 # Function to split segment ID into sutta, section number and segment number.
 split_seg_id <- function (seg_id) {
@@ -73,9 +51,7 @@ vinaya_data <- raw_vinaya_data %>%
   separate(segment_id_copy, into = c("sutta", "section_num", "segment_num"), sep = "[|]") %>%
 
   # Extract vinaya category.
-  mutate(cat_abb = str_remove(sutta, "[0-9].*$")) %>%
-  left_join(vin_categories, by = "cat_abb") %>%
-  select(-cat_abb) %>%
+  mutate(collection = str_extract(sutta, "(?<=pli-tv-).*?(?=[0-9])")) %>%
 
   # Extract sutta number.
   mutate(sutta_num = str_remove(sutta, ".*?(?=[0-9])")) %>%
