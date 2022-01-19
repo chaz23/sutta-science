@@ -41,7 +41,7 @@ Available formats: `.Rda`, `.tsv`.
 
 This is an augmented version of the raw version. Some new features (eg: sutta title, sutta number) have been added, headers and subheaders have been removed, blank rows omitted, and data rearranged.
 
-Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `nikaya`, `sutta_num`, `title`.  
+Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `collection`, `sutta_num`, `title`.  
 Available formats: `.Rda`, `.tsv`.  
 
 #### Dataset 4 
@@ -49,7 +49,7 @@ Available formats: `.Rda`, `.tsv`.
 
 This is an augmented version of the raw version. Some new features (eg: sutta title, sutta number) have been added, headers and subheaders have been removed, blank rows omitted, and data rearranged.
 
-Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `nikaya`, `sutta_num`, `title`.  
+Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `collection`, `sutta_num`, `title`.  
 Available formats: `.Rda`, `.tsv`.
 
 #### Dataset 5 
@@ -57,7 +57,7 @@ Available formats: `.Rda`, `.tsv`.
 
 This is an augmented version of the raw version (dataset_2). Some new features (eg: sutta title, sutta number) have been added, headers and subheaders have been removed, blank rows omitted, and data rearranged.
 
-Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `vin_category`, `sutta_num`, `title`.  
+Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `collection`, `sutta_num`, `title`.  
 Available formats: `.Rda`, `.tsv`.
 
 ## Tools and References
