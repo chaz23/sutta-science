@@ -9,8 +9,8 @@ This project aims to solve some of these problems - i.e collating, cleaning, fea
 ## Contents
 
 * [Datasets](#datasets)
-    * Sutta translations.
-        - [Raw download of Bhante Sujato's translations of the Sutta Pitaka](#dataset-1) 
+    * [Sutta translations](#sutta-translations)
+        - [Raw download of Bhante Sujato's translations of the Sutta Pitaka](#test) 
         - [Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka](#dataset-2)
         - [Tidied representation of Bhante Sujato's translation of the 4 nikayas](#dataset-3)
         - [Tidied representation of Bhante Sujato's translation of the Khuddaka nikaya](#dataset-4)
@@ -21,8 +21,8 @@ This project aims to solve some of these problems - i.e collating, cleaning, fea
 
 Datasets and their associated script/s (if any) are accessible via subdirectories of the `data` directory.
 
-### Sutta translations. 
-**Raw download of Bhante Sujato's translations of the Sutta Pitaka.**
+### Sutta translations 
+#### <a name="test"></a>Raw download of Bhante Sujato's translations of the Sutta Pitaka
 
 This includes translations of the 4 main nikayas (`dn`, `mn`, `sn`, `an`) in full, as well as select texts of the Khuddaka Nikaya (`kn`). Available texts of the `kn` include the Dhammapada (`dhp`), Itivuttaka (`iti`), Khuddakapatha (`kp`), Sutta Nipata (`snp`), Theragatha (`thag`), Therigatha (`thig`) and Udana (`ud`). Aside from the Jatakas, these are all considered to be early texts of the KN. The Khuddakapatha is considered a later text.
 
