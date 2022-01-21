@@ -10,26 +10,28 @@ This project aims to solve some of these problems - i.e collating, cleaning, fea
 
 * [Datasets](#datasets)
     * [Sutta translations](#sutta-translations)
-        - [Raw download of Bhante Sujato's translations of the Sutta Pitaka](#test) 
-        - [Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka](#dataset-2)
-        - [Tidied representation of Bhante Sujato's translation of the 4 nikayas](#dataset-3)
-        - [Tidied representation of Bhante Sujato's translation of the Khuddaka nikaya](#dataset-4)
-        - [Tidied representation of Ajahn Brahmali's translation of the Vinaya Pitaka](#dataset-5)
+        - [Raw download of Bhante Sujato's translations of the Sutta Pitaka](#sutta-translations-dataset-1) 
+        - [Tidied representation of Bhante Sujato's translation of the 4 nikayas](#sutta-translations-dataset-2)
+        - [Tidied representation of Bhante Sujato's translation of the Khuddaka nikaya](#sutta-translations-dataset-3)
+    * [Vinaya translations](#vinaya-translations)
+        - [Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka](#vinaya-translations-dataset-1)
+        - [Tidied representation of Ajahn Brahmali's translation of the Vinaya Pitaka](#vinaya-translations-dataset-2)
 * [Tools and references](#tools-and-references)
 
 ## Datasets
 
-Datasets and their associated script/s (if any) are accessible via subdirectories of the `data` directory.
+Datasets and their associated script/s (if any) are accessible via subdirectories of the `data` directory. For quick access to these subdirectories, click on the hashtags in front of each dataset title. 
 
 ### Sutta translations 
-#### <a name="test"></a>Raw download of Bhante Sujato's translations of the Sutta Pitaka
+
+#### [#dataset_1](https://github.com/chaz23/sutta-science/tree/experimental/data/sutta-translations/dataset_1) <a name="sutta-translations-dataset-1"></a>· Raw download of Bhante Sujato's translations of the Sutta Pitaka  
 
 This includes translations of the 4 main nikayas (`dn`, `mn`, `sn`, `an`) in full, as well as select texts of the Khuddaka Nikaya (`kn`). Available texts of the `kn` include the Dhammapada (`dhp`), Itivuttaka (`iti`), Khuddakapatha (`kp`), Sutta Nipata (`snp`), Theragatha (`thag`), Therigatha (`thig`) and Udana (`ud`). Aside from the Jatakas, these are all considered to be early texts of the KN. The Khuddakapatha is considered a later text.
 
 Table of data with columns `segment_id` and `segment_text`.  
 Available formats: `.Rda`, `.tsv`.  
 
-#### Dataset 2 
+#### [#dataset_2](https://github.com/chaz23/sutta-science/tree/main/data/sutta-translations/dataset_2) <a name="sutta-translations-dataset-1"></a>· Raw download of Bhante Sujato's translations of the Sutta Pitaka 
 **Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka.**
 
 This includes translations of select texts from the Theravada Vinaya Pitaka (`pli-tv-vi`). Texts include the Bhikkhu Vibhanga (`pli-tv-bu-vb`), Bhikkhuni Vibhanga (`pli-tv-bi-vb`), Khandhaka (`pli-tv-kd`) and Parivara (`pli-tv-pvr`).
