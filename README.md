@@ -24,14 +24,30 @@ Datasets and their associated script/s (if any) are accessible via subdirectorie
 
 ### Sutta translations 
 
-#### [#dataset_1](https://github.com/chaz23/sutta-science/tree/experimental/data/sutta-translations/dataset_1) <a name="sutta-translations-dataset-1"></a>· Raw download of Bhante Sujato's translations of the Sutta Pitaka  
+#### [#dataset_1](https://github.com/chaz23/sutta-science/tree/main/data/sutta-translations/dataset_1) <a name="sutta-translations-dataset-1"></a>· Raw download of Bhante Sujato's translations of the Sutta Pitaka  
 
 This includes translations of the 4 main nikayas (`dn`, `mn`, `sn`, `an`) in full, as well as select texts of the Khuddaka Nikaya (`kn`). Available texts of the `kn` include the Dhammapada (`dhp`), Itivuttaka (`iti`), Khuddakapatha (`kp`), Sutta Nipata (`snp`), Theragatha (`thag`), Therigatha (`thig`) and Udana (`ud`). Aside from the Jatakas, these are all considered to be early texts of the KN. The Khuddakapatha is considered a later text.
 
 Table of data with columns `segment_id` and `segment_text`.  
 Available formats: `.Rda`, `.tsv`.  
 
-#### [#dataset_2](https://github.com/chaz23/sutta-science/tree/main/data/sutta-translations/dataset_2) <a name="sutta-translations-dataset-1"></a>· Raw download of Bhante Sujato's translations of the Sutta Pitaka 
+#### [#dataset_2](https://github.com/chaz23/sutta-science/tree/main/data/sutta-translations/dataset_2) <a name="sutta-translations-dataset-2"></a>· Tidied representation of Bhante Sujato's translation of the 4 nikayas (`dn`, `mn`, `sn`, `an`) 
+
+This is an augmented version of the [raw download](#sutta-translations-dataset-1). Some new features (eg: sutta title, sutta number) have been added, headers and subheaders have been removed, blank rows omitted, and data rearranged.
+
+Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `collection`, `sutta_num`, `title`.  
+Available formats: `.Rda`, `.tsv`.  
+
+#### [#dataset_3](https://github.com/chaz23/sutta-science/tree/main/data/sutta-translations/dataset_3) <a name="sutta-translations-dataset-3"></a>· Tidied representation of Bhante Sujato's translation of the Khuddaka nikaya** (`kn`)
+
+This is an augmented version of the [raw download](#sutta-translations-dataset-1). Some new features (eg: sutta title, sutta number) have been added, headers and subheaders have been removed, blank rows omitted, and data rearranged.
+
+Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `collection`, `sutta_num`, `title`.  
+Available formats: `.Rda`, `.tsv`.
+
+
+### Vinaya translations
+
 **Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka.**
 
 This includes translations of select texts from the Theravada Vinaya Pitaka (`pli-tv-vi`). Texts include the Bhikkhu Vibhanga (`pli-tv-bu-vb`), Bhikkhuni Vibhanga (`pli-tv-bi-vb`), Khandhaka (`pli-tv-kd`) and Parivara (`pli-tv-pvr`).
@@ -39,21 +55,6 @@ This includes translations of select texts from the Theravada Vinaya Pitaka (`pl
 Table of data with columns `segment_id` and `segment_text`.  
 Available formats: `.Rda`, `.tsv`.
 
-#### Dataset 3 
-**Tidied representation of Bhante Sujato's translation of the 4 nikayas** (`dn`, `mn`, `sn`, `an`).  
-
-This is an augmented version of the raw version. Some new features (eg: sutta title, sutta number) have been added, headers and subheaders have been removed, blank rows omitted, and data rearranged.
-
-Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `collection`, `sutta_num`, `title`.  
-Available formats: `.Rda`, `.tsv`.  
-
-#### Dataset 4 
-**Tidied representation of Bhante Sujato's translation of the Khuddaka nikaya** (`kn`).  
-
-This is an augmented version of the raw version. Some new features (eg: sutta title, sutta number) have been added, headers and subheaders have been removed, blank rows omitted, and data rearranged.
-
-Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `collection`, `sutta_num`, `title`.  
-Available formats: `.Rda`, `.tsv`.
 
 #### Dataset 5 
 **Tidied representation of Ajahn Brahmali's translation of the Vinaya Pitaka** (`pli-tv-vi`).  
