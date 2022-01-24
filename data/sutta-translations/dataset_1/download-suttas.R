@@ -1,3 +1,7 @@
+# [DEPRACATED] - Use bilara i/o instead to download raw content.
+# This script still works though.
+
+
 # Script to download the sutta pitaka. ------------------------------------
 
 library(purrr)

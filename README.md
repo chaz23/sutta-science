@@ -2,9 +2,9 @@
 
 [SuttaCentral](https://github.com/suttacentral) is doing amazing work making Buddhist source texts and translations open-source and freely available to all. :tada: 
 
-However, for a developer it can be intimidating at first to navigate the [bilara-data repository](https://github.com/suttacentral/bilara-data) with its nested hierarchies and abundance of information. Recursing through these nested directories to put together a useful dataset can also be a prohibitively time-consuming task. Additionally, some data exists in a form that is not so amenable to analysis.
+Developers may wish to explore [bilara i/o](https://github.com/suttacentral/bilara-data/wiki/Bilara-io) which is a superb tool developed by SuttaCentral that allows you to download JSON data from the [bilara-data repo](https://github.com/suttacentral/bilara-data) into a format of your choice. 
 
-This project aims to solve some of these problems - i.e collating, cleaning, feature-engineering - by preparing datasets that are fit for immediate exploration with a tool of your choice.
+This project aims to build on that work. First, by collating, cleaning and feature-engineering, it prepares datasets that are fit for immediate exploration with a tool of your choice. Second, it builds bespoke datasets that may not be readily available.
 
 ## Contents
 
