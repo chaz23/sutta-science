@@ -22,7 +22,7 @@ This project aims to build on that work. First, by collating, cleaning and featu
 
 Datasets and their associated script/s (if any) are accessible via subdirectories of the `data` directory. For quick access to these subdirectories, click on the hashtags in front of each dataset title. 
 
-### Sutta translations 
+### :sparkles: Sutta translations 
 
 #### [#dataset_1](https://github.com/chaz23/sutta-science/tree/main/data/sutta-translations/dataset_1) <a name="sutta-translations-dataset-1"></a>· Raw download of Bhante Sujato's translations of the Sutta Pitaka  
 
