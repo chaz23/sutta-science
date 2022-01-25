@@ -31,7 +31,7 @@ sutta_refs <- dn_refs %>%
   bind_rows(mn_refs, sn_refs, an_refs, kn_refs) %>% 
   unnest_tokens(reference, reference, to_lower = FALSE, token = "regex", pattern = ",") %>%
   mutate(reference = str_trim(reference)) %>% 
-  mutate(text = str_extract(reference, "^.*[a-z]"))
+  mutate(edition = str_extract(reference, "^.*[a-z]"))
 
 # Save to disk.
 save(sutta_refs, file = "./data/references/dataset_1/sutta_refs.Rda")

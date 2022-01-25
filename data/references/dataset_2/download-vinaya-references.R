@@ -29,7 +29,7 @@ vinaya_refs <- bu_vb_refs %>%
   bind_rows(bi_vb_refs, kd_refs, pvr_refs) %>% 
   unnest_tokens(reference, reference, to_lower = FALSE, token = "regex", pattern = ",") %>%
   mutate(reference = str_trim(reference)) %>% 
-  mutate(text = str_extract(reference, "^.*[a-z]"))
+  mutate(edition = str_extract(reference, "^.*[a-z]"))
 
 # Save to disk.
 save(vinaya_refs, file = "./data/references/dataset_2/vinaya_refs.Rda")
