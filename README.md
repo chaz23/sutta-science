@@ -104,9 +104,15 @@ Available formats: `.Rda`, `.tsv`.
 
 Maps references from over 40 editions of the Pali Canon to the Sutta Pitaka on a segment-level granularity.
 
+Table of data with columns `segment_id`, `reference` and `edition`.  
+Available formats: `.Rda`, `.tsv`.
+
 #### [#dataset_2](https://github.com/chaz23/sutta-science/tree/main/data/references/dataset_2) <a name="text-references-dataset-2"></a>· Vinaya Pitaka references for various editions of the Pali Canon
 
 Maps references from over 40 editions of the Pali Canon to the Vinaya Pitaka on a segment-level granularity.
+
+Table of data with columns `segment_id`, `reference` and `edition`.  
+Available formats: `.Rda`, `.tsv`.
 
 ## Tools and References
 
