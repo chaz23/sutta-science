@@ -9,6 +9,12 @@ This project aims to build on that work. First, by collating, cleaning and featu
 ## Contents
 
 * [Datasets](#datasets)
+    * [Pali texts](#pali-texts)
+        - [Raw download of the Sutta Pitaka in Pali](#pali-texts-dataset-1)
+        - [Raw download of the Vinaya Pitaka in Pali](#pali-texts-dataset-2)
+    * [HTML Markup](#html-markup)
+        - [HTML markup for the Sutta Pitaka](#html-markup-dataset-1)
+        - [HTML markup for the Vinaya Pitaka](#html-markup-dataset-2)
     * [Sutta translations](#sutta-translations)
         - [Raw download of Bhante Sujato's translations of the Sutta Pitaka](#sutta-translations-dataset-1) 
         - [Tidied representation of Bhante Sujato's translation of the 4 nikayas](#sutta-translations-dataset-2)
@@ -16,11 +22,38 @@ This project aims to build on that work. First, by collating, cleaning and featu
     * [Vinaya translations](#vinaya-translations)
         - [Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka](#vinaya-translations-dataset-1)
         - [Tidied representation of Ajahn Brahmali's translation of the Vinaya Pitaka](#vinaya-translations-dataset-2)
+    * [Text references](#refs)
+        - [References for the Sutta Pitaka](#refs-dataset-1)
+        - [References for the Vinaya Pitaka](#refs-dataset-2)
 * [Tools and references](#tools-and-references)
 
 ## Datasets
 
 Datasets and their associated script/s (if any) are accessible via subdirectories of the `data` directory. For quick access to these subdirectories, click on the hashtags in front of each dataset title. 
+
+### :sparkles: Pali texts
+
+#### [#dataset_1](https://github.com/chaz23/sutta-science/tree/main/data/pali-texts/dataset_1) <a name="pali-texts-dataset-1"></a>· Raw download of the Sutta Pitaka in Pali
+
+Table of data with columns `segment_id` and `segment_text`.  
+Available formats: `.Rda`, `.tsv`.
+
+#### [#dataset_2](https://github.com/chaz23/sutta-science/tree/main/data/pali-texts/dataset_2) <a name="pali-texts-dataset-2"></a>· Raw download of the Vinaya Pitaka in Pali
+
+Table of data with columns `segment_id` and `segment_text`.  
+Available formats: `.Rda`, `.tsv`.
+
+### :sparkles: HTML markup
+
+#### [#dataset_1](https://github.com/chaz23/sutta-science/tree/main/data/html/dataset_1) <a name="html-markup-dataset-1"></a>· Segment-level HTML markup for the Sutta Pitaka
+
+Table of data with columns `segment_id` and `html`.  
+Available formats: `.Rda`, `.tsv`.
+
+#### [#dataset_2](https://github.com/chaz23/sutta-science/tree/main/data/html/dataset_2) <a name="html-markup-dataset-2"></a>· Segment-level HTML markup for the Vinaya Pitaka
+
+Table of data with columns `segment_id` and `html`.  
+Available formats: `.Rda`, `.tsv`.
 
 ### :sparkles: Sutta translations 
 
@@ -46,7 +79,7 @@ Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`,
 Available formats: `.Rda`, `.tsv`.
 
 
-### Vinaya translations
+### :sparkles: Vinaya translations
 
 #### [#dataset_1](https://github.com/chaz23/sutta-science/tree/main/data/vinaya-translations/dataset_1) <a name="vinaya-translations-dataset-1"></a>· Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka 
 
