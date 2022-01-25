@@ -1,64 +1,44 @@
-# Script to download the vinaya pitaka. -----------------------------------
+# Script to read in vinaya translations from bilara i/o. ------------------
 
-library(purrr)
-library(gh)
-library(jsonlite)
+# Make sure you have python 3.6 or higher.
+# Clone the bilara-data repo.
+# Navigate to "bilara-data/.scripts/bilara-io".
+# Execute the following commands at the terminal.
+# Note I am using Windows CMD.
+
+# python sheet_export.py pli-tv-bu-vb bu-vb-trans-en.tsv --include translation+en
+# python sheet_export.py pli-tv-bi-vb bi-vb-trans-en.tsv --include translation+en
+# python sheet_export.py pli-tv-kd kd-trans-en.tsv --include translation+en
+# python sheet_export.py pli-tv-pvr pvr-trans-en.tsv --include translation+en
+
+# Now run the following script.
+
 library(dplyr)
 library(readr)
 
-# Check Github API calls remaining.
-rate <- gh("GET /rate_limit")
-calls_remaining <- rate$rate$limit - rate$rate$used
-if (calls_remaining < 72) stop("API calls insufficient.")
+# NOTE: You will have to change the following paths.
 
-vinaya_list_root <- "/repos/suttacentral/bilara-data/contents/translation/en/brahmali/vinaya/"
+bu_vb_vinaya_data <- read_tsv("./../bilara-data/.scripts/bilara-io/bu-vb-trans-en.tsv") %>% 
+  rename(segment_text = `translation-en-brahmali`) %>% 
+  select(segment_id, segment_text)
+bi_vb_vinaya_data <- read_tsv("./../bilara-data/.scripts/bilara-io/bi-vb-trans-en.tsv") %>% 
+  rename(segment_text = `translation-en-brahmali`) %>% 
+  select(segment_id, segment_text)
+kd_vinaya_data <- read_tsv("./../bilara-data/.scripts/bilara-io/kd-trans-en.tsv") %>% 
+  rename(segment_text = `translation-en-brahmali`) %>% 
+  select(segment_id, segment_text)
+pvr_vinaya_data <- read_tsv("./../bilara-data/.scripts/bilara-io/pvr-trans-en.tsv") %>% 
+  rename(segment_text = `translation-en-brahmali`) %>% 
+  select(segment_id, segment_text)
 
-sections <- c("pli-tv-bi-vb", "pli-tv-bu-vb", "pli-tv-kd", "pli-tv-pvr")
+raw_vinaya_data <- bu_vb_vinaya_data %>%
+  bind_rows(bi_vb_vinaya_data, kd_vinaya_data, pvr_vinaya_data)
 
-vinaya_list <- unlist(map(vinaya_list_root, paste0, sections))
-
-resp <- map(paste0("GET ", vinaya_list), gh)
-names(resp) <- sections
-
-raw_content_url <- function (resp) {
-  lapply(resp, function (x) {
-    if (is.null(x$download_url)) {
-      raw_content_url(gh(x$url)) 
-    } else {
-      x$download_url
-    }
-  })
-}
-
-download_urls <- unlist(lapply(resp, raw_content_url))
-
-# Download JSON data and convert to tibble.
-raw_vinaya_data <- download_urls %>%
-  as_tibble() %>%
-  mutate(github_data = map(value, fromJSON),
-         github_data = map(github_data, tibble::enframe)) %>%
-  select(github_data) %>%
-  tidyr::unnest(cols = github_data) %>%
-  tidyr::unnest(cols = value) %>%
-  rename(segment_id = name,
-         segment_text = value)
-
-bi_vb_vinaya_data <- raw_vinaya_data %>% 
-  filter(grepl("bi-vb", segment_id))
-
-bu_vb_vinaya_data <- raw_vinaya_data %>% 
-  filter(grepl("bu-vb", segment_id))
-
-kd_vinaya_data <- raw_vinaya_data %>% 
-  filter(grepl("kd", segment_id))
-
-pvr_vinaya_data <- raw_vinaya_data %>% 
-  filter(grepl("pvr", segment_id))
 
 # Save vinaya data.
-save(raw_vinaya_data, file = "./data/dataset_2/raw_vinaya_data.Rda")
+save(raw_vinaya_data, file = "./data/vinaya-translations/dataset_1/raw_vinaya_data.Rda")
 
-write_tsv(bi_vb_vinaya_data, file = "./data/dataset_2/raw_bi_vb_vinaya_data.tsv")
-write_tsv(bu_vb_vinaya_data, file = "./data/dataset_2/raw_bu_vb_vinaya_data.tsv")
-write_tsv(kd_vinaya_data, file = "./data/dataset_2/raw_kd_vinaya_data.tsv")
-write_tsv(pvr_vinaya_data, file = "./data/dataset_2/raw_pvr_vinaya_data.tsv")
+write_tsv(bi_vb_vinaya_data, file = "./data/vinaya-translations/dataset_1/raw_bi_vb_vinaya_data.tsv")
+write_tsv(bu_vb_vinaya_data, file = "./data/vinaya-translations/dataset_1/raw_bu_vb_vinaya_data.tsv")
+write_tsv(kd_vinaya_data, file = "./data/vinaya-translations/dataset_1/raw_kd_vinaya_data.tsv")
+write_tsv(pvr_vinaya_data, file = "./data/vinaya-translations/dataset_1/raw_pvr_vinaya_data.tsv")
