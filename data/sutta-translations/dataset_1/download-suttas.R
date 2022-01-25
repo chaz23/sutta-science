@@ -1,72 +1,49 @@
-# [DEPRACATED] - Use bilara i/o instead to download raw content.
-# This script still works though.
+# Script to read in sutta translations from bilara i/o. -------------------
 
+# Make sure you have python 3.6 or higher.
+# Clone the bilara-data repo.
+# Navigate to "bilara-data/.scripts/bilara-io".
+# Execute the following commands at the terminal.
+# Note I am using Windows CMD.
 
-# Script to download the sutta pitaka. ------------------------------------
+# python sheet_export.py dn dn-trans-en.tsv --include translation+en
+# python sheet_export.py mn mn-trans-en.tsv --include translation+en
+# python sheet_export.py sn sn-trans-en.tsv --include translation+en
+# python sheet_export.py an an-trans-en.tsv --include translation+en
+# python sheet_export.py kn kn-trans-en.tsv --include translation+en
 
-library(purrr)
-library(gh)
-library(jsonlite)
+# Now run the following script.
+
 library(dplyr)
 library(readr)
 
-# Check Github API calls remaining.
-rate <- gh("GET /rate_limit")
-calls_remaining <- rate$rate$limit - rate$rate$used
-if (calls_remaining < 72) stop("API calls insufficient.")
+# NOTE: You will have to change the following paths.
 
-sutta_list_root <- "/repos/suttacentral/bilara-data/contents/translation/en/sujato/sutta/"
+dn_sutta_data <- read_tsv("./../bilara-data/.scripts/bilara-io/dn-trans-en.tsv") %>% 
+  rename(segment_text = `translation-en-sujato`) %>% 
+  select(segment_id, segment_text)
+mn_sutta_data <- read_tsv("./../bilara-data/.scripts/bilara-io/mn-trans-en.tsv") %>% 
+  rename(segment_text = `translation-en-sujato`) %>% 
+  select(segment_id, segment_text)
+sn_sutta_data <- read_tsv("./../bilara-data/.scripts/bilara-io/sn-trans-en.tsv") %>% 
+  rename(segment_text = `translation-en-sujato`) %>% 
+  select(segment_id, segment_text)
+an_sutta_data <- read_tsv("./../bilara-data/.scripts/bilara-io/an-trans-en.tsv") %>% 
+  rename(segment_text = `translation-en-sujato`) %>% 
+  select(segment_id, segment_text)
+kn_sutta_data <- read_tsv("./../bilara-data/.scripts/bilara-io/kn-trans-en.tsv") %>% 
+  rename(segment_text = `translation-en-sujato`) %>% 
+  select(segment_id, segment_text)
 
-nikayas <- c("dn", "mn", "sn", "an", "kn")
+raw_sutta_data <- dn_sutta_data %>%
+  bind_rows(mn_sutta_data, sn_sutta_data, an_sutta_data, kn_sutta_data)
 
-sutta_list <- unlist(map(sutta_list_root, paste0, nikayas))
-
-resp <- map(paste0("GET ", sutta_list), gh)
-names(resp) <- nikayas
-
-raw_content_url <- function (resp) {
-  lapply(resp, function (x) {
-    if (is.null(x$download_url)) {
-      raw_content_url(gh(x$url)) 
-    } else {
-      x$download_url
-    }
-  })
-}
-
-download_urls <- unlist(lapply(resp, raw_content_url))
-
-# Download JSON data and convert to tibble.
-raw_sutta_data <- download_urls %>%
-  as_tibble() %>%
-  mutate(github_data = map(value, fromJSON),
-         github_data = map(github_data, tibble::enframe)) %>%
-  select(github_data) %>%
-  tidyr::unnest(cols = github_data) %>%
-  tidyr::unnest(cols = value) %>%
-  rename(segment_id = name,
-         segment_text = value)
-
-dn_sutta_data <- raw_sutta_data %>% 
-  filter(grepl("^dn", segment_id))
-
-mn_sutta_data <- raw_sutta_data %>% 
-  filter(grepl("^mn", segment_id))
-
-sn_sutta_data <- raw_sutta_data %>% 
-  filter(grepl("^sn", segment_id))
-
-an_sutta_data <- raw_sutta_data %>% 
-  filter(grepl("^an", segment_id))
-
-kn_sutta_data <- raw_sutta_data %>% 
-  filter(!grepl("^(dn|mn|sn|an)", segment_id)) 
 
 # Save sutta data.
-save(raw_sutta_data, file = "./data/dataset_1/raw_sutta_data.Rda")
+save(raw_sutta_data, file = "./data/sutta-translations/dataset_1/raw_sutta_data.Rda")
 
-write_tsv(dn_sutta_data, file = "./data/dataset_1/raw_dn_sutta_data.tsv")
-write_tsv(mn_sutta_data, file = "./data/dataset_1/raw_mn_sutta_data.tsv")
-write_tsv(sn_sutta_data, file = "./data/dataset_1/raw_sn_sutta_data.tsv")
-write_tsv(an_sutta_data, file = "./data/dataset_1/raw_an_sutta_data.tsv")
-write_tsv(kn_sutta_data, file = "./data/dataset_1/raw_kn_sutta_data.tsv")
+write_tsv(dn_sutta_data, file = "./data/sutta-translations/dataset_1/raw_dn_sutta_data.tsv")
+write_tsv(mn_sutta_data, file = "./data/sutta-translations/dataset_1/raw_mn_sutta_data.tsv")
+write_tsv(sn_sutta_data, file = "./data/sutta-translations/dataset_1/raw_sn_sutta_data.tsv")
+write_tsv(an_sutta_data, file = "./data/sutta-translations/dataset_1/raw_an_sutta_data.tsv")
+write_tsv(kn_sutta_data, file = "./data/sutta-translations/dataset_1/raw_kn_sutta_data.tsv")

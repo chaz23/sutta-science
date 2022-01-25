@@ -7,7 +7,7 @@ library(tidyr)
 library(readr)
 
 load("./data/sutta-translations/dataset_1/raw_sutta_data.Rda")
-load("./data/sutta-html/dataset_1/sutta_html_data.Rda")
+load("./data/html/dataset_1/sutta_html.Rda")
 
 
 split_seg_id <- function (seg_id) {
@@ -39,7 +39,7 @@ sutta_data <- raw_sutta_data %>%
   # Check the HTML markup for each segment.
   # Segments with the markup "class='sutta-title'" are titles.
   
-  left_join(sutta_html_data, by = "segment_id") %>% 
+  left_join(sutta_html, by = "segment_id") %>% 
   mutate(title = case_when(grepl("class='sutta-title'", html) ~ segment_text,
                            TRUE ~ NA_character_)) %>% 
   select(-html) %>% 
