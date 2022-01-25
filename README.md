@@ -22,9 +22,9 @@ This project aims to build on that work. First, by collating, cleaning and featu
     * [Vinaya translations](#vinaya-translations)
         - [Raw download of Ajahn Brahmali's translations of the Vinaya Pitaka](#vinaya-translations-dataset-1)
         - [Tidied representation of Ajahn Brahmali's translation of the Vinaya Pitaka](#vinaya-translations-dataset-2)
-    * [Text references](#refs)
-        - [References for the Sutta Pitaka](#refs-dataset-1)
-        - [References for the Vinaya Pitaka](#refs-dataset-2)
+    * [Text references](#text-references)
+        - [References for the Sutta Pitaka](#text-references-dataset-1)
+        - [References for the Vinaya Pitaka](#text-references-dataset-2)
 * [Tools and references](#tools-and-references)
 
 ## Datasets
@@ -97,6 +97,16 @@ Note that the column headers of this data table are identical with the tidied ve
 
 Table of data with columns `segment_id`, `segment_text`, `sutta`, `section_num`, `segment_num`, `collection`, `sutta_num`, `title`.  
 Available formats: `.Rda`, `.tsv`.
+
+### :sparkles: Text references
+
+#### [#dataset_1](https://github.com/chaz23/sutta-science/tree/main/data/references/dataset_1) <a name="text-references-dataset-1"></a>· Sutta Pitaka references for various editions of the Pali Canon
+
+Maps references from over 40 editions of the Pali Canon to the Sutta Pitaka on a segment-level granularity.
+
+#### [#dataset_2](https://github.com/chaz23/sutta-science/tree/main/data/references/dataset_2) <a name="text-references-dataset-2"></a>· Vinaya Pitaka references for various editions of the Pali Canon
+
+Maps references from over 40 editions of the Pali Canon to the Vinaya Pitaka on a segment-level granularity.
 
 ## Tools and References
 
