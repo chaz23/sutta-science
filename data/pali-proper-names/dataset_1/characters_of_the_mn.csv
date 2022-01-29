@@ -1,0 +1,76 @@
+﻿sutta,character,character_id,presence,role
+mn1,buddha,Buddha,present,teacher
+mn2,buddha,Buddha,present,teacher
+mn3,buddha,Buddha,present,teacher
+,sariputta,Sāriputta,present,teacher
+mn4,buddha,Buddha,present,teacher
+,janussoni,Jāṇussoṇi,present,"speaker,listener"
+mn5,buddha,Buddha,mentioned,
+,sariputta,Sāriputta,present,teacher
+,mahamoggallana,Mahāmoggallāna,present,"speaker,listener"
+,samiti,Samīti,mentioned,
+,panduputta,Paṇḍuputta,mentioned,speaker
+mn6,buddha,Buddha,present,teacher
+mn7,buddha,Buddha,present,teacher
+,sundarika bharadvaja,Sundarika,present,"speaker,listener"
+mn8,buddha,Buddha,present,teacher
+,mahacunda,Cunda2,present,"speaker,listener"
+mn9,buddha,Buddha,mentioned,
+,sariputta,Sāriputta,present,teacher
+mn10,buddha,Buddha,present,teacher
+mm11,buddha,Buddha,present,teacher
+mn12,buddha,Buddha,present,teacher
+,sunakkhatta,Sunakkhatta,mentioned,speaker
+,sariputta,Sāriputta,present,listener
+,nagasamala,Nāgasamāla,present,"speaker,listener"
+mn13,buddha,Buddha,present,teacher
+mn14,buddha,Buddha,present,teacher
+,mahanama,Mahānāma1,present,"speaker,listener"
+,nataputta,Nigaṇṭha Nāṭaputta,mentioned,speaker
+,bimbisara,Bimbisāra,mentioned,
+mn15,mahamoggallana,Mahāmoggallāna,present,teacher
+mn16,buddha,Buddha,present,teacher
+mn17,buddha,Buddha,present,teacher
+mn18,buddha,Buddha,present,teacher
+,dandapani,Daṇḍapāṇi,present,"speaker,listener"
+,mahakaccana,Mahākaccāyana,present,teacher
+,ananda,Ānanda,present,"speaker,listener"
+mn19,buddha,Buddha,present,teacher
+,mara,Māra,mentioned,
+mn20,buddha,Buddha,present,teacher
+mn21,buddha,Buddha,present,teacher
+,phagguna,Phagguna,present,listener
+,vedehika,Vedehikā,mentioned,
+,kali,Kāḷī2,mentioned,
+mn22,buddha,Buddha,present,teacher
+,arittha,Ariṭṭha1,present,listener
+,indra,Inda2,mentioned,
+,brahma,,mentioned,
+,pajapati,Pajāpati,mentioned,
+mn23,buddha,Buddha,present,teacher
+,kassapa the prince,Kumārakassapa,present,listener
+mn24,buddha,Buddha,present,
+,punna mantaniputta,Puṇṇa3,present,
+,sariputta,Sāriputta,present,
+,king pasenadi,Pasenadi,mentioned,
+mn25,buddha,Buddha,present,
+,mara,Māra,mentioned,
+mn26,buddha,Buddha,present,
+,ananda,Ānanda,present,
+,rammaka,,mentioned,
+,alara kalama,Āḷārakālāma,mentioned,
+,uddaka,Uddaka,mentioned,
+,rama,,mentioned,
+,brahma sahampati,Sahampati,mentioned,
+,upaka,Upaka1,mentioned,
+,mara,Māra,mentioned,
+,kondanna,Aññātakoṇḍañña,mentioned,
+,bhaddiya,,,
+,vappa,Vappa1,mentioned,
+,mahanama,,mentioned,
+,assaji,Assaji1,mentioned,
+mn27,buddha,Buddha,present,
+,janussoni,Jāṇussoṇi,present,
+,pilotika,Pilotika,present,
+mn28,buddha,Buddha,mentioned,
+,sariputta,Sāriputta,present,
