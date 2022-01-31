@@ -4,17 +4,17 @@ mn2,buddha,Buddha,present,teacher
 mn3,buddha,Buddha,present,teacher
 ,sariputta,Sāriputta,present,teacher
 mn4,buddha,Buddha,present,teacher
-,janussoni,Jāṇussoṇi,present,"speaker,listener"
+,janussoni,Jāṇussoṇi,present,speaker
 mn5,buddha,Buddha,mentioned,
 ,sariputta,Sāriputta,present,teacher
-,mahamoggallana,Mahāmoggallāna,present,"speaker,listener"
+,mahamoggallana,Mahāmoggallāna,present,speaker
 ,samiti,Samīti,mentioned,
 ,panduputta,Paṇḍuputta,mentioned,speaker
 mn6,buddha,Buddha,present,teacher
 mn7,buddha,Buddha,present,teacher
-,sundarika bharadvaja,Sundarika,present,"speaker,listener"
+,sundarika bharadvaja,Sundarika,present,speaker
 mn8,buddha,Buddha,present,teacher
-,mahacunda,Cunda2,present,"speaker,listener"
+,mahacunda,Cunda2,present,speaker
 mn9,buddha,Buddha,mentioned,
 ,sariputta,Sāriputta,present,teacher
 mn10,buddha,Buddha,present,teacher
@@ -22,55 +22,70 @@ mm11,buddha,Buddha,present,teacher
 mn12,buddha,Buddha,present,teacher
 ,sunakkhatta,Sunakkhatta,mentioned,speaker
 ,sariputta,Sāriputta,present,listener
-,nagasamala,Nāgasamāla,present,"speaker,listener"
+,nagasamala,Nāgasamāla,present,speaker
 mn13,buddha,Buddha,present,teacher
 mn14,buddha,Buddha,present,teacher
-,mahanama,Mahānāma1,present,"speaker,listener"
+,mahanama,Mahānāma1,present,speaker
 ,nataputta,Nigaṇṭha Nāṭaputta,mentioned,speaker
 ,bimbisara,Bimbisāra,mentioned,
 mn15,mahamoggallana,Mahāmoggallāna,present,teacher
 mn16,buddha,Buddha,present,teacher
 mn17,buddha,Buddha,present,teacher
 mn18,buddha,Buddha,present,teacher
-,dandapani,Daṇḍapāṇi,present,"speaker,listener"
+,dandapani,Daṇḍapāṇi,present,speaker
 ,mahakaccana,Mahākaccāyana,present,teacher
-,ananda,Ānanda,present,"speaker,listener"
+,ananda,Ānanda,present,speaker
 mn19,buddha,Buddha,present,teacher
 ,mara,Māra,mentioned,
 mn20,buddha,Buddha,present,teacher
 mn21,buddha,Buddha,present,teacher
-,phagguna,Phagguna,present,listener
-,vedehika,Vedehikā,mentioned,
-,kali,Kāḷī2,mentioned,
+,phagguna,Phagguna,present,speaker
+,vedehika,Vedehikā,mentioned,speaker
+,kali,Kāḷī2,mentioned,speaker
 mn22,buddha,Buddha,present,teacher
-,arittha,Ariṭṭha1,present,listener
+,arittha,Ariṭṭha1,present,speaker
 ,indra,Inda2,mentioned,
 ,brahma,,mentioned,
 ,pajapati,Pajāpati,mentioned,
 mn23,buddha,Buddha,present,teacher
-,kassapa the prince,Kumārakassapa,present,listener
-mn24,buddha,Buddha,present,
-,punna mantaniputta,Puṇṇa3,present,
-,sariputta,Sāriputta,present,
+,kassapa the prince,Kumārakassapa,present,speaker
+mn24,buddha,Buddha,present,speaker
+,punna mantaniputta,Puṇṇa3,present,teacher
+,sariputta,Sāriputta,present,speaker
 ,king pasenadi,Pasenadi,mentioned,
-mn25,buddha,Buddha,present,
+mn25,buddha,Buddha,present,teacher
 ,mara,Māra,mentioned,
-mn26,buddha,Buddha,present,
-,ananda,Ānanda,present,
+mn26,buddha,Buddha,present,teacher
+,ananda,Ānanda,present,speaker
 ,rammaka,,mentioned,
-,alara kalama,Āḷārakālāma,mentioned,
-,uddaka,Uddaka,mentioned,
+,alara kalama,Āḷārakālāma,mentioned,speaker
+,uddaka,Uddaka,mentioned,speaker
 ,rama,,mentioned,
-,brahma sahampati,Sahampati,mentioned,
-,upaka,Upaka1,mentioned,
+,brahma sahampati,Sahampati,mentioned,speaker
+,upaka,Upaka1,mentioned,speaker
 ,mara,Māra,mentioned,
 ,kondanna,Aññātakoṇḍañña,mentioned,
 ,bhaddiya,,,
 ,vappa,Vappa1,mentioned,
 ,mahanama,,mentioned,
 ,assaji,Assaji1,mentioned,
-mn27,buddha,Buddha,present,
-,janussoni,Jāṇussoṇi,present,
-,pilotika,Pilotika,present,
+mn27,buddha,Buddha,present,teacher
+,janussoni,Jāṇussoṇi,present,speaker
+,pilotika,Pilotika,present,speaker
 mn28,buddha,Buddha,mentioned,
-,sariputta,Sāriputta,present,
+,sariputta,Sāriputta,present,teacher
+mn29,buddha,Buddha,present,teacher
+,devadatta,Devadatta,mentioned,
+mn30,buddha,Buddha,present,teacher
+,pingalakoccha,Piṅgalakoccha,present,speaker
+,purana kassapa,Pūraṇa Kassapa,mentioned,
+,makkhali gosala,Makkhali,mentioned,
+,nigantha nataputta,Nigaṇṭha Nāṭaputta,mentioned,
+,sanjaya belatthiputta,Sañjaya3,mentioned,
+,pakudha kaccayana,Pakudha,mentioned,
+,ajita kesakambala,Ajitakesakambala,mentioned,
+mn31,buddha,Buddha,present,teacher
+,anuruddha,Anuruddha,present,speaker
+,nandiya,Nandiya1,present,speaker
+,kimbila,Kimbila,present,speaker
+,digha parajana,,present,speaker
