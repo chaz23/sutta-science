@@ -1,170 +1,205 @@
-﻿sutta,character,character_id,presence,role
-mn1,buddha,Buddha,present,teacher
-mn2,buddha,Buddha,present,teacher
-mn3,buddha,Buddha,present,teacher
-,sariputta,Sāriputta,present,teacher
-mn4,buddha,Buddha,present,teacher
-,janussoni,Jāṇussoṇi,present,speaker
-mn5,buddha,Buddha,mentioned,
-,sariputta,Sāriputta,present,teacher
-,mahamoggallana,Mahāmoggallāna,present,speaker
-,samiti,Samīti,mentioned,
-,panduputta,Paṇḍuputta,mentioned,speaker
-mn6,buddha,Buddha,present,teacher
-mn7,buddha,Buddha,present,teacher
-,sundarika bharadvaja,Sundarika,present,speaker
-mn8,buddha,Buddha,present,teacher
-,mahacunda,Cunda2,present,speaker
-mn9,buddha,Buddha,mentioned,
-,sariputta,Sāriputta,present,teacher
-mn10,buddha,Buddha,present,teacher
-mm11,buddha,Buddha,present,teacher
-mn12,buddha,Buddha,present,teacher
-,sunakkhatta,Sunakkhatta,mentioned,speaker
-,sariputta,Sāriputta,present,listener
-,nagasamala,Nāgasamāla,present,speaker
-mn13,buddha,Buddha,present,teacher
-mn14,buddha,Buddha,present,teacher
-,mahanama,Mahānāma1,present,speaker
-,nataputta,Nigaṇṭha Nāṭaputta,mentioned,speaker
-,bimbisara,Bimbisāra,mentioned,
-mn15,mahamoggallana,Mahāmoggallāna,present,teacher
-mn16,buddha,Buddha,present,teacher
-mn17,buddha,Buddha,present,teacher
-mn18,buddha,Buddha,present,teacher
-,dandapani,Daṇḍapāṇi,present,speaker
-,mahakaccana,Mahākaccāyana,present,teacher
-,ananda,Ānanda,present,speaker
-mn19,buddha,Buddha,present,teacher
-,mara,Māra,mentioned,
-mn20,buddha,Buddha,present,teacher
-mn21,buddha,Buddha,present,teacher
-,phagguna,Phagguna,present,speaker
-,vedehika,Vedehikā,mentioned,speaker
-,kali,Kāḷī2,mentioned,speaker
-mn22,buddha,Buddha,present,teacher
-,arittha,Ariṭṭha1,present,speaker
-,indra,Inda2,mentioned,
-,brahma,,mentioned,
-,pajapati,Pajāpati,mentioned,
-mn23,buddha,Buddha,present,teacher
-,kassapa the prince,Kumārakassapa,present,speaker
-mn24,buddha,Buddha,present,speaker
-,punna mantaniputta,Puṇṇa3,present,teacher
-,sariputta,Sāriputta,present,speaker
-,king pasenadi,Pasenadi,mentioned,
-mn25,buddha,Buddha,present,teacher
-,mara,Māra,mentioned,
-mn26,buddha,Buddha,present,teacher
-,ananda,Ānanda,present,speaker
-,rammaka,,mentioned,
-,alara kalama,Āḷārakālāma,mentioned,speaker
-,uddaka,Uddaka,mentioned,speaker
-,rama,,mentioned,
-,brahma sahampati,Sahampati,mentioned,speaker
-,upaka,Upaka1,mentioned,speaker
-,mara,Māra,mentioned,
-,kondanna,Aññātakoṇḍañña,mentioned,
-,bhaddiya,,,
-,vappa,Vappa1,mentioned,
-,mahanama,,mentioned,
-,assaji,Assaji1,mentioned,
-mn27,buddha,Buddha,present,teacher
-,janussoni,Jāṇussoṇi,present,speaker
-,pilotika,Pilotika,present,speaker
-mn28,buddha,Buddha,mentioned,
-,sariputta,Sāriputta,present,teacher
-mn29,buddha,Buddha,present,teacher
-,devadatta,Devadatta,mentioned,
-mn30,buddha,Buddha,present,teacher
-,pingalakoccha,Piṅgalakoccha,present,speaker
-,purana kassapa,Pūraṇa Kassapa,mentioned,
-,makkhali gosala,Makkhali,mentioned,
-,nigantha nataputta,Nigaṇṭha Nāṭaputta,mentioned,
-,sanjaya belatthiputta,Sañjaya3,mentioned,
-,pakudha kaccayana,Pakudha,mentioned,
-,ajita kesakambala,Ajitakesakambala,mentioned,
-mn31,buddha,Buddha,present,teacher
-,anuruddha,Anuruddha,present,speaker
-,nandiya,Nandiya1,present,speaker
-,kimbila,Kimbila,present,speaker
-,digha parajana,,present,speaker
-mn32,buddha,Buddha,present,speaker
-,sariputta,Sāriputta,present,speaker
-,mahamoggallana,Mahāmoggallāna,present,speaker
-,mahakassapa,Mahākassapa,present,speaker
-,anuruddha,Anuruddha,present,speaker
-,revata,Revata1,present,speaker
-,ananda,Ānanda,present,speaker
-mn33,buddha,Buddha,present,teacher
-mn34,buddha,Buddha,present,teacher
-,mara,Māra,mentioned,
-mn35,buddha,Buddha,present,teacher
-,saccaka,,present,speaker
-,assaji,Assaji1,present,speaker
-,king pasenadi,Pasenadi,mentioned,
-,ajatasattu,Ajātasattu,mentioned,
-,vajirapani,Vajirapāṇi,present,listener
-,dummukha,Dummukha,present,speaker
-mn36,buddha,Buddha,present,teacher
-,saccaka,,present,speaker
-,ananda,Ānanda,present,speaker
-,nanda vaccha,,mentioned,
-,kisa sankicca,,mentioned,
-,alara kalama,,mentioned,speaker
-,uddaka,,mentioned,speaker
-,rama,,mentioned,speaker
-,suddodhana,Suddhodana,mentioned,
-,kondanna,Aññātakoṇḍañña,mentioned,
-,bhaddiya,,,
-,vappa,Vappa1,mentioned,
-,mahanama,,mentioned,
-,assaji,Assaji1,mentioned,
-,purana kassapa,Pūraṇa Kassapa,mentioned,
-,makkhali gosala,Makkhali,mentioned,
-,nigantha nataputta,Nigaṇṭha Nāṭaputta,mentioned,
-,sanjaya belatthiputta,Sañjaya3,mentioned,
-,pakudha kaccayana,Pakudha,mentioned,
-,ajita kesakambala,Ajitakesakambala,mentioned,
-mn37,buddha,Buddha,present,teacher
-,sakka,Sakka,present,speaker
-,mahamoggallana,Mahāmoggallāna,present,speaker
-,vessavana,,present,listener
-mn38,buddha,Buddha,present,teacher
-,sati,Sāti,present,speaker
-mn39,buddha,Buddha,present,teacher
-mn40,buddha,Buddha,present,teacher
-mn41,buddha,Buddha,present,teacher
-mn42,buddha,Buddha,present,teacher
-mn43,buddha,Buddha,present,
-,mahakotthita,Mahākoṭṭhita,present,speaker
-,sariputta,Sāriputta,present,teacher
-mn44,buddha,Buddha,present,speaker
-,visakha,Visakha1,present,speaker
-,dhammadinna,Dhammadinnā,present,teacher
-mn45,buddha,Buddha,present,teacher
-mn46,buddha,Buddha,present,teacher
-mn47,buddha,Buddha,present,teacher
-mn48,buddha,Buddha,present,teacher
-mn49,buddha,Buddha,present,teacher
-,baka,Baka,present,speaker
-,mara,Māra,present,speaker
-mn50,mahamoggallana,Mahāmoggallāna,present,speaker
-,mara,Māra,present,speaker
-,dusi,Dūsī,mentioned,speaker
-,kali,Kāḷī3,mentioned,
-,kakusandha,Kakusandha,mentioned,speaker
-,vidhura,Vidhura,mentioned,
-,sanjiva,Sañjīva,mentioned,
-,sakka,Sakka,mentioned,
-,brahma,,mentioned,
-mn51,buddha,Buddha,present,teacher
-,pessa,Pessa,present,speaker
-,kandaraka,Kandaraka,present,speaker
-mn52,ananda,Ānanda,present,teacher
-,dasama,Dasama,present,speaker
-mn53,buddha,Buddha,present,speaker
-,ananda,Ānanda,present,teacher
-,mahanama,Mahānāma1,present,listener
-,sanankumara,Sanaṅkumāra,mentioned,
-mn54,,,,
+﻿sutta,character,character_id,presence,role,type
+mn1,buddha,Buddha,present,teacher,buddha
+mn2,buddha,Buddha,present,teacher,buddha
+mn3,buddha,Buddha,present,teacher,buddha
+mn3,sariputta,Sāriputta,present,teacher,enlightened monk
+mn4,buddha,Buddha,present,teacher,buddha
+mn4,janussoni,Jāṇussoṇi,present,speaker,male lay follower
+mn5,buddha,Buddha,mentioned,,buddha
+mn5,sariputta,Sāriputta,present,teacher,enlightened monk
+mn5,mahamoggallana,Mahāmoggallāna,present,speaker,enlightened monk
+mn5,samiti,Samīti,mentioned,,
+mn5,panduputta,Paṇḍuputta,mentioned,speaker,
+mn6,buddha,Buddha,present,teacher,
+mn7,buddha,Buddha,present,teacher,
+mn7,sundarika bharadvaja,Sundarika,present,speaker,
+mn8,buddha,Buddha,present,teacher,
+mn8,mahacunda,Cunda2,present,speaker,
+mn9,buddha,Buddha,mentioned,,
+mn9,sariputta,Sāriputta,present,teacher,
+mn10,buddha,Buddha,present,teacher,
+mm11,buddha,Buddha,present,teacher,
+mn12,buddha,Buddha,present,teacher,
+mn12,sunakkhatta,Sunakkhatta,mentioned,speaker,
+mn12,sariputta,Sāriputta,present,listener,
+mn12,nagasamala,Nāgasamāla,present,speaker,
+mn13,buddha,Buddha,present,teacher,
+mn14,buddha,Buddha,present,teacher,
+mn14,mahanama,Mahānāma1,present,speaker,
+mn14,nataputta,Nigaṇṭha Nāṭaputta,mentioned,speaker,
+mn14,bimbisara,Bimbisāra,mentioned,,
+mn15,mahamoggallana,Mahāmoggallāna,present,teacher,
+mn16,buddha,Buddha,present,teacher,
+mn17,buddha,Buddha,present,teacher,
+mn18,buddha,Buddha,present,teacher,
+mn18,dandapani,Daṇḍapāṇi,present,speaker,
+mn18,mahakaccana,Mahākaccāyana,present,teacher,
+mn18,ananda,Ānanda,present,speaker,
+mn19,buddha,Buddha,present,teacher,
+mn19,mara,Māra,mentioned,,
+mn20,buddha,Buddha,present,teacher,
+mn21,buddha,Buddha,present,teacher,
+mn21,phagguna,Phagguna,present,speaker,
+mn21,vedehika,Vedehikā,mentioned,speaker,
+mn21,kali,Kāḷī2,mentioned,speaker,
+mn22,buddha,Buddha,present,teacher,
+mn22,arittha,Ariṭṭha1,present,speaker,
+mn22,indra,Inda2,mentioned,,
+mn22,brahma,,mentioned,,
+mn22,pajapati,Pajāpati,mentioned,,
+mn23,buddha,Buddha,present,teacher,
+mn23,kassapa the prince,Kumārakassapa,present,speaker,
+mn24,buddha,Buddha,present,speaker,
+mn24,punna mantaniputta,Puṇṇa3,present,teacher,
+mn24,sariputta,Sāriputta,present,speaker,
+mn24,king pasenadi,Pasenadi,mentioned,,
+mn25,buddha,Buddha,present,teacher,
+mn25,mara,Māra,mentioned,,
+mn26,buddha,Buddha,present,teacher,
+mn26,ananda,Ānanda,present,speaker,
+mn26,rammaka,,mentioned,,
+mn26,alara kalama,Āḷārakālāma,mentioned,speaker,
+mn26,uddaka,Uddaka,mentioned,speaker,
+mn26,rama,,mentioned,,
+mn26,brahma sahampati,Sahampati,mentioned,speaker,
+mn26,upaka,Upaka1,mentioned,speaker,
+mn26,mara,Māra,mentioned,,
+mn26,kondanna,Aññātakoṇḍañña,mentioned,,
+mn26,bhaddiya,,,,
+mn26,vappa,Vappa1,mentioned,,
+mn26,mahanama,,mentioned,,
+mn26,assaji,Assaji1,mentioned,,
+mn27,buddha,Buddha,present,teacher,
+mn27,janussoni,Jāṇussoṇi,present,speaker,
+mn27,pilotika,Pilotika,present,speaker,
+mn28,buddha,Buddha,mentioned,,
+mn28,sariputta,Sāriputta,present,teacher,
+mn29,buddha,Buddha,present,teacher,
+mn29,devadatta,Devadatta,mentioned,,
+mn30,buddha,Buddha,present,teacher,
+mn30,pingalakoccha,Piṅgalakoccha,present,speaker,
+mn30,purana kassapa,Pūraṇa Kassapa,mentioned,,
+mn30,makkhali gosala,Makkhali,mentioned,,
+mn30,nigantha nataputta,Nigaṇṭha Nāṭaputta,mentioned,,
+mn30,sanjaya belatthiputta,Sañjaya3,mentioned,,
+mn30,pakudha kaccayana,Pakudha,mentioned,,
+mn30,ajita kesakambala,Ajitakesakambala,mentioned,,
+mn31,buddha,Buddha,present,teacher,
+mn31,anuruddha,Anuruddha,present,speaker,
+mn31,nandiya,Nandiya1,present,speaker,
+mn31,kimbila,Kimbila,present,speaker,
+mn31,digha parajana,,present,speaker,
+mn32,buddha,Buddha,present,speaker,
+mn32,sariputta,Sāriputta,present,speaker,
+mn32,mahamoggallana,Mahāmoggallāna,present,speaker,
+mn32,mahakassapa,Mahākassapa,present,speaker,
+mn32,anuruddha,Anuruddha,present,speaker,
+mn32,revata,Revata1,present,speaker,
+mn32,ananda,Ānanda,present,speaker,
+mn33,buddha,Buddha,present,teacher,
+mn34,buddha,Buddha,present,teacher,
+mn34,mara,Māra,mentioned,,
+mn35,buddha,Buddha,present,teacher,
+mn35,saccaka,,present,speaker,
+mn35,assaji,Assaji1,present,speaker,
+mn35,king pasenadi,Pasenadi,mentioned,,
+mn35,ajatasattu,Ajātasattu,mentioned,,
+mn35,vajirapani,Vajirapāṇi,present,listener,
+mn35,dummukha,Dummukha,present,speaker,
+mn36,buddha,Buddha,present,teacher,
+mn36,saccaka,,present,speaker,
+mn36,ananda,Ānanda,present,speaker,
+mn36,nanda vaccha,,mentioned,,
+mn36,kisa sankicca,,mentioned,,
+mn36,alara kalama,,mentioned,speaker,
+mn36,uddaka,,mentioned,speaker,
+mn36,rama,,mentioned,speaker,
+mn36,suddodhana,Suddhodana,mentioned,,
+mn36,kondanna,Aññātakoṇḍañña,mentioned,,
+mn36,bhaddiya,,,,
+mn36,vappa,Vappa1,mentioned,,
+mn36,mahanama,,mentioned,,
+mn36,assaji,Assaji1,mentioned,,
+mn36,purana kassapa,Pūraṇa Kassapa,mentioned,,
+mn36,makkhali gosala,Makkhali,mentioned,,
+mn36,nigantha nataputta,Nigaṇṭha Nāṭaputta,mentioned,,
+mn36,sanjaya belatthiputta,Sañjaya3,mentioned,,
+mn36,pakudha kaccayana,Pakudha,mentioned,,
+mn36,ajita kesakambala,Ajitakesakambala,mentioned,,
+mn37,buddha,Buddha,present,teacher,
+mn37,sakka,Sakka,present,speaker,
+mn37,mahamoggallana,Mahāmoggallāna,present,speaker,
+mn37,vessavana,,present,listener,
+mn38,buddha,Buddha,present,teacher,
+mn38,sati,Sāti,present,speaker,
+mn39,buddha,Buddha,present,teacher,
+mn40,buddha,Buddha,present,teacher,
+mn41,buddha,Buddha,present,teacher,
+mn42,buddha,Buddha,present,teacher,
+mn43,buddha,Buddha,present,,
+mn43,mahakotthita,Mahākoṭṭhita,present,speaker,
+mn43,sariputta,Sāriputta,present,teacher,
+mn44,buddha,Buddha,present,speaker,
+mn44,visakha,Visakha1,present,speaker,
+mn44,dhammadinna,Dhammadinnā,present,teacher,
+mn45,buddha,Buddha,present,teacher,
+mn46,buddha,Buddha,present,teacher,
+mn47,buddha,Buddha,present,teacher,
+mn48,buddha,Buddha,present,teacher,
+mn49,buddha,Buddha,present,teacher,
+mn49,baka,Baka,present,speaker,
+mn49,mara,Māra,present,speaker,
+mn50,mahamoggallana,Mahāmoggallāna,present,speaker,
+mn50,mara,Māra,present,speaker,
+mn50,dusi,Dūsī,mentioned,speaker,
+mn50,kali,Kāḷī3,mentioned,,
+mn50,kakusandha,Kakusandha,mentioned,speaker,
+mn50,vidhura,Vidhura,mentioned,,
+mn50,sanjiva,Sañjīva,mentioned,,
+mn50,sakka,Sakka,mentioned,,
+mn50,brahma,,mentioned,,
+mn51,buddha,Buddha,present,teacher,
+mn51,pessa,Pessa,present,speaker,
+mn51,kandaraka,Kandaraka,present,speaker,
+mn52,ananda,Ānanda,present,teacher,
+mn52,dasama,Dasama,present,speaker,
+mn53,buddha,Buddha,present,speaker,
+mn53,ananda,Ānanda,present,teacher,
+mn53,mahanama,Mahānāma1,present,listener,
+mn53,sanankumara,Sanaṅkumāra,mentioned,,
+mn54,buddha,Buddha,present,teacher,
+mn54,potaliya,Potaliya,present,speaker,
+mn55,buddha,Buddha,present,teacher,
+mn55,jivaka,Jīvaka,present,speaker,
+mn55,brahma,,mentioned,,
+mn56,buddha,Buddha,present,teacher,
+mn56,nigantha nataputta,Nigaṇṭha Nāṭaputta,present,speaker,
+mn56,digha tapassi,Dīghatapassī,present,speaker,
+mn56,upali,Upāli3,present,speaker,
+mn56,rattapani,Rattapāṇi,mentioned,speaker,
+mn57,buddha,Buddha,present,teacher,
+mn57,punna koliyaputta,Puṇṇa2,present,speaker,
+mn57,seniya,Seniya,present,speaker,
+mn58,buddha,Buddha,present,teacher,
+mn58,prince abhaya,Abhaya2,present,speaker,
+mn58,nigantha nataputta,Nigaṇṭha Nāṭaputta,present,speaker,
+mn58,devadatta,Devadatta,mentioned,,
+mn59,buddha,Buddha,present,teacher,
+mn59,pancakanga,Pañcakaṅga,present,speaker,
+mn59,udayi,Udāyī1,present,speaker,
+mn59,ananda,Ānanda,present,speaker,
+mn60,buddha,Buddha,present,teacher,
+mn61,buddha,Buddha,present,teacher,
+mn61,rahula,Rāhula,present,speaker,
+mn62,buddha,Buddha,present,teacher,
+mn62,rahula,Rāhula,present,speaker,
+mn62,sariputta,Sāriputta,present,speaker,
+mn63,buddha,Buddha,present,teacher,
+mn63,malunkya,Māluṅkyāputta,present,speaker,
+mn64,buddha,Buddha,present,teacher,
+mn64,malunkya,Māluṅkyāputta,present,speaker,
+mn64,ananda,Ānanda,present,speaker,
+mn65,buddha,Buddha,present,teacher,
+mn65,bhaddali,Bhaddāli,present,speaker,
+mn66,buddha,Buddha,present,teacher,
+mn66,udayi,Udāyī1,present,speaker,
