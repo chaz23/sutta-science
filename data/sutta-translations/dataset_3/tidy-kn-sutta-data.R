@@ -24,7 +24,7 @@ kn_sutta_data <- raw_sutta_data %>%
   # Except for thag which has 2 segments with 0-th level segment numbers.
   
   mutate(sutta = str_extract(segment_id, "^.*(?=:)"),
-         section_num = case_when(grepl("dhp", sutta) ~ NA_character_,
+         section_num = case_when(grepl("dhp", sutta) ~ str_extract(segment_id, "(?<=dhp).*(?=:)"),
                                  grepl("thag1.1:1.0.", segment_id) ~ "1",
                                  TRUE ~ str_extract(segment_id, "(?<=:).*(?=[.])")),
          segment_num = case_when(grepl("dhp", sutta) ~ str_extract(segment_id, "(?<=:).*$"),
