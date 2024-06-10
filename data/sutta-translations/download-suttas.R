@@ -40,10 +40,10 @@ raw_sutta_data <- dn_sutta_data %>%
 
 
 # Save sutta data.
-save(raw_sutta_data, file = "./data/sutta-translations/dataset_1/raw_sutta_data.Rda")
+save(raw_sutta_data, file = "./data/sutta-translations/raw_sutta_data.Rda")
 
-write_tsv(dn_sutta_data, file = "./data/sutta-translations/dataset_1/raw_dn_sutta_data.tsv")
-write_tsv(mn_sutta_data, file = "./data/sutta-translations/dataset_1/raw_mn_sutta_data.tsv")
-write_tsv(sn_sutta_data, file = "./data/sutta-translations/dataset_1/raw_sn_sutta_data.tsv")
-write_tsv(an_sutta_data, file = "./data/sutta-translations/dataset_1/raw_an_sutta_data.tsv")
-write_tsv(kn_sutta_data, file = "./data/sutta-translations/dataset_1/raw_kn_sutta_data.tsv")
+write_tsv(dn_sutta_data, file = "./data/sutta-translations/raw_dn_sutta_data.tsv")
+write_tsv(mn_sutta_data, file = "./data/sutta-translations/raw_mn_sutta_data.tsv")
+write_tsv(sn_sutta_data, file = "./data/sutta-translations/raw_sn_sutta_data.tsv")
+write_tsv(an_sutta_data, file = "./data/sutta-translations/raw_an_sutta_data.tsv")
+write_tsv(kn_sutta_data, file = "./data/sutta-translations/raw_kn_sutta_data.tsv")

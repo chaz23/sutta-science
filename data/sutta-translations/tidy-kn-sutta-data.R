@@ -5,8 +5,8 @@ library(stringr)
 library(tidyr)
 library(readr)
 
-load("./data/sutta-translations/dataset_1/raw_sutta_data.Rda")
-load("./data/html/dataset_1/sutta_html.Rda")
+load("./data/sutta-translations/raw_sutta_data.Rda")
+load("./data/html/sutta_html.Rda")
 
 
 kn_sutta_data <- raw_sutta_data %>% 
@@ -56,6 +56,6 @@ kn_sutta_data <- raw_sutta_data %>%
 
 
 # Save to disk.
-save(kn_sutta_data, file = "./data/sutta-translations/dataset_3/kn_sutta_data.Rda")
+save(kn_sutta_data, file = "./data/sutta-translations/kn_sutta_data.Rda")
 
-write_tsv(kn_sutta_data, "./data/sutta-translations/dataset_3/kn_sutta_data.tsv")
+write_tsv(kn_sutta_data, "./data/sutta-translations/kn_sutta_data.tsv")

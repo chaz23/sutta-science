@@ -6,8 +6,8 @@ library(purrr)
 library(tidyr)
 library(readr)
 
-load("./data/sutta-translations/dataset_1/raw_sutta_data.Rda")
-load("./data/html/dataset_1/sutta_html.Rda")
+load("./data/sutta-translations/raw_sutta_data.Rda")
+load("./data/html/sutta_html.Rda")
 
 
 split_seg_id <- function (seg_id) {
@@ -63,9 +63,9 @@ sn_sutta_data <- sutta_data %>% filter(collection == "sn")
 an_sutta_data <- sutta_data %>% filter(collection == "an")
 
 # Save to disk.
-save(sutta_data, file = "./data/sutta-translations/dataset_2/sutta_data.Rda")
+save(sutta_data, file = "./data/sutta-translations/sutta_data.Rda")
 
-write_tsv(dn_sutta_data, "./data/sutta-translations/dataset_2/dn_sutta_data.tsv")
-write_tsv(mn_sutta_data, "./data/sutta-translations/dataset_2/mn_sutta_data.tsv")
-write_tsv(sn_sutta_data, "./data/sutta-translations/dataset_2/sn_sutta_data.tsv")
-write_tsv(an_sutta_data, "./data/sutta-translations/dataset_2/an_sutta_data.tsv")
+write_tsv(dn_sutta_data, "./data/sutta-translations/dn_sutta_data.tsv")
+write_tsv(mn_sutta_data, "./data/sutta-translations/mn_sutta_data.tsv")
+write_tsv(sn_sutta_data, "./data/sutta-translations/sn_sutta_data.tsv")
+write_tsv(an_sutta_data, "./data/sutta-translations/an_sutta_data.tsv")

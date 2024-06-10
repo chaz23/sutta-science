@@ -34,6 +34,6 @@ sutta_refs <- dn_refs %>%
   mutate(edition = str_extract(reference, "^.*[a-z]"))
 
 # Save to disk.
-save(sutta_refs, file = "./data/references/dataset_1/sutta_refs.Rda")
+save(sutta_refs, file = "./data/references/sutta_refs.Rda")
 
-write_tsv(sutta_refs, file = "./data/references/dataset_1/sutta_refs.tsv")
+write_tsv(sutta_refs, file = "./data/references/sutta_refs.tsv")

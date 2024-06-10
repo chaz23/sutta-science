@@ -29,6 +29,6 @@ sutta_html <- dn_html %>%
   bind_rows(mn_html, sn_html, an_html, kn_html)
 
 # Save to disk.
-save(sutta_html, file = "./data/html/dataset_1/sutta_html.Rda")
+save(sutta_html, file = "./data/html/sutta_html.Rda")
 
-write_tsv(sutta_html, file = "./data/html/dataset_1/sutta_html.tsv")
+write_tsv(sutta_html, file = "./data/html/sutta_html.tsv")

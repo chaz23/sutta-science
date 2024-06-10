@@ -32,6 +32,6 @@ vinaya_refs <- bu_vb_refs %>%
   mutate(edition = str_extract(reference, "^.*[a-z]"))
 
 # Save to disk.
-save(vinaya_refs, file = "./data/references/dataset_2/vinaya_refs.Rda")
+save(vinaya_refs, file = "./data/references/vinaya_refs.Rda")
 
-write_tsv(vinaya_refs, file = "./data/references/dataset_2/vinaya_refs.tsv")
+write_tsv(vinaya_refs, file = "./data/references/vinaya_refs.tsv")

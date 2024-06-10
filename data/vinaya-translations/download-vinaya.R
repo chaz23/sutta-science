@@ -36,9 +36,9 @@ raw_vinaya_data <- bu_vb_vinaya_data %>%
 
 
 # Save vinaya data.
-save(raw_vinaya_data, file = "./data/vinaya-translations/dataset_1/raw_vinaya_data.Rda")
+save(raw_vinaya_data, file = "./data/vinaya-translations/raw_vinaya_data.Rda")
 
-write_tsv(bi_vb_vinaya_data, file = "./data/vinaya-translations/dataset_1/raw_bi_vb_vinaya_data.tsv")
-write_tsv(bu_vb_vinaya_data, file = "./data/vinaya-translations/dataset_1/raw_bu_vb_vinaya_data.tsv")
-write_tsv(kd_vinaya_data, file = "./data/vinaya-translations/dataset_1/raw_kd_vinaya_data.tsv")
-write_tsv(pvr_vinaya_data, file = "./data/vinaya-translations/dataset_1/raw_pvr_vinaya_data.tsv")
+write_tsv(bi_vb_vinaya_data, file = "./data/vinaya-translations/raw_bi_vb_vinaya_data.tsv")
+write_tsv(bu_vb_vinaya_data, file = "./data/vinaya-translations/raw_bu_vb_vinaya_data.tsv")
+write_tsv(kd_vinaya_data, file = "./data/vinaya-translations/raw_kd_vinaya_data.tsv")
+write_tsv(pvr_vinaya_data, file = "./data/vinaya-translations/raw_pvr_vinaya_data.tsv")

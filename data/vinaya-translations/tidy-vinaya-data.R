@@ -6,7 +6,7 @@ library(purrr)
 library(tidyr)
 library(readr)
 
-load("./data/dataset_2/raw_vinaya_data.Rda")
+load("./data/vinaya-translations/raw_vinaya_data.Rda")
 
 
 # Function to split segment ID into sutta, section number and segment number.
@@ -108,6 +108,6 @@ vinaya_data <- raw_vinaya_data %>%
           as.numeric(sutta_num))
 
 # Save to disk.
-save(vinaya_data, file = "./data/dataset_5/vinaya_data.Rda")
+save(vinaya_data, file = "./data/vinaya-translations/vinaya_data.Rda")
 
-write_tsv(vinaya_data, "./data/dataset_5/vinaya_data.tsv")
+write_tsv(vinaya_data, "./data/vinaya-translations/vinaya_data.tsv")

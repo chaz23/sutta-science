@@ -27,6 +27,6 @@ vinaya_html <- bu_vb_html %>%
   bind_rows(bi_vb_html, kd_html, pvr_html)
 
 # Save to disk.
-save(vinaya_html, file = "./data/html/dataset_2/vinaya_html.Rda")
+save(vinaya_html, file = "./data/html/vinaya_html.Rda")
 
-write_tsv(vinaya_html, file = "./data/html/dataset_2/vinaya_html.tsv")
+write_tsv(vinaya_html, file = "./data/html/vinaya_html.tsv")
