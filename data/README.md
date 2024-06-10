@@ -1,5 +1,16 @@
-# sutta-science
+## Datasets
 
+### Sutta translations: `sutta-translations`  
+
+This data is based on Bhante Sujato's translations of the Sutta Pitaka.
+
+- `text-embeddings`
+
+Text embedding models of the sutta pitaka.
+
+- `vinaya-translations`  
+
+This data is based on Ajahn Brahmali's translations of the Vinaya Pitaka.
 [SuttaCentral](https://github.com/suttacentral) is doing amazing work making Buddhist source texts and translations open-source and freely available to everyone. :tada: 
 
 Developers may wish to explore [bilara i/o](https://github.com/suttacentral/bilara-data/wiki/Bilara-io) which is a superb tool developed by SuttaCentral that allows you to download JSON data from the [bilara-data repo](https://github.com/suttacentral/bilara-data) into a format of your choice. 
