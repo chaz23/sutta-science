@@ -1,6 +1,6 @@
 # sutta-science
 
-[SuttaCentral](https://github.com/suttacentral) is doing amazing work making Buddhist source texts and translations open-source and freely available to all. :tada: 
+[SuttaCentral](https://github.com/suttacentral) is doing amazing work making Buddhist source texts and translations open-source and freely available to everyone. :tada: 
 
 Developers may wish to explore [bilara i/o](https://github.com/suttacentral/bilara-data/wiki/Bilara-io) which is a superb tool developed by SuttaCentral that allows you to download JSON data from the [bilara-data repo](https://github.com/suttacentral/bilara-data) into a format of your choice. 
 
