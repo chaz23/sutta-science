@@ -3,6 +3,7 @@ library(httr)
 library(jsonlite)
 library(embed)
 library(stringr)
+library(arrow)
 
 
 # Load data.
@@ -113,3 +114,6 @@ save(embeddings_by_section,
 write.csv(embeddings_by_section, 
           file = "./data/text-embeddings/embeddings_by_section.csv", 
           row.names = FALSE)
+
+write_feather(embeddings_by_section, 
+              sink = "./data/text-embeddings/embeddings_by_section.arrow")
