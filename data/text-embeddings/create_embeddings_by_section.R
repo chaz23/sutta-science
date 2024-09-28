@@ -118,4 +118,4 @@ write.csv(embeddings_by_section,
 write_dataset(dataset = embeddings_by_section,
               path = "./data/text-embeddings/", 
               format = "parquet", 
-              basename_template = "embeddings_by_section_{i}")
+              basename_template = "embeddings_by_section_{i}.parquet")
