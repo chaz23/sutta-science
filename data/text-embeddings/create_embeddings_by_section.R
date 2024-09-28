@@ -115,5 +115,7 @@ write.csv(embeddings_by_section,
           file = "./data/text-embeddings/embeddings_by_section.csv", 
           row.names = FALSE)
 
-write_feather(embeddings_by_section, 
-              sink = "./data/text-embeddings/embeddings_by_section.arrow")
+write_dataset(dataset = embeddings_by_section,
+              path = "./data/text-embeddings/", 
+              format = "parquet", 
+              basename_template = "embeddings_by_section_{i}")
