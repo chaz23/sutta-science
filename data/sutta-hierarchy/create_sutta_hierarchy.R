@@ -84,7 +84,7 @@ root_node %>%
 
 # Clean the final results.
 sutta_hierarchy <- sutta_hierarchy %>% 
-  mutate(parent_id = case_when(parent_id == "menu" ~ NA_character_,
+  mutate(parent_id = case_when(parent_id == "menu" ~ "",
                                parent_id == "long" ~ "sutta",
                                parent_id == "middle" ~ "sutta",
                                parent_id == "mn-mulapannasa" ~ "mn",
@@ -100,3 +100,4 @@ sutta_hierarchy <- sutta_hierarchy %>%
 
 # Save data.
 save(sutta_hierarchy, file = "./data/sutta-hierarchy/sutta_hierarchy.Rda")
+
