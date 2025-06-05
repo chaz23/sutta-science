@@ -1,4 +1,4 @@
-# A script to create a hierarchy of the Sutta Pitaka.
+# A script to create a hierarchy of the Vinaya Pitaka.
 # The main purpose of this dataset is to pass is to pass it to functions like d3.stratify.
 
 library(dplyr)
@@ -12,29 +12,22 @@ library(glue)
 
 # Define the API endpoint.
 api_endpoint <- "https://suttacentral.net/api/menu"
-root_node <- "sutta"
+root_node <- "vinaya"
 
 # Prepare the request.
 req <- request(api_endpoint) %>% 
   req_headers("Accept" = "application/json")
 
 # Create an empty dataframe to store the results.
-sutta_hierarchy <- tibble()
+vinaya_hierarchy <- tibble()
 
 # Create an exclusion list to specify which nodes not to recurse through or append to the hierarchy. 
 exclusion_list <- list(
   recurse = c(
-    "da", "da-ot", 
-    "ma", "ma-ot", 
-    "sa", "sa-2", "sa-3", "sa-ot",
-    "ea", "ea-2", "ea-ot",
-    "dharmapadas", "minor-lzh", "vv", "pv", "tha-ap", "thi-ap", "bv", "ja", "mnd", "cnd", "ps", "ne", "pe", "mil",
-    "other-group"
+    "lzh-mg-vi", "san-mg-vi", "san-lo-vi", "lzh-mi-vi", "lzh-dg-vi", "pgd-dg-vi", "lzh-sarv-vi", "san-sarv-vi", "lzh-mu-vi", "san-mu-vi", "xct-mu-vi",
+    "other-vi"
   ),
-  append = c(
-    "long", "middle", "linked", "numbered", "minor",
-    "mn-mulapannasa", "mn-majjhimapannasa", "mn-uparipannasa"
-  )
+  append = c()
 )
 
 
@@ -49,9 +42,9 @@ recurse_through_hierarchy <- function(uid, parent_uid) {
     resp_body_json() %>% 
     pluck(1)
   
-  # If the node is not in `exclusion_list$append`, then append the elements to `sutta_hierarchy`.
+  # If the node is not in `exclusion_list$append`, then append the elements to `vinaya_hierarchy`.
   if (!resp$uid %in% exclusion_list$append) {
-    sutta_hierarchy <<- sutta_hierarchy %>% 
+    vinaya_hierarchy <<- vinaya_hierarchy %>% 
       bind_rows(
         tibble(
           id = resp$uid,
@@ -70,12 +63,13 @@ recurse_through_hierarchy <- function(uid, parent_uid) {
   resp$children %>% 
     map(~ {
       print(.x$uid)
-      if (!.x$uid %in% exclusion_list$recurse) {
-        recurse_through_hierarchy(.x$uid, uid)
+      if (!is_null(.x$uid)) {
+        if (!.x$uid %in% exclusion_list$recurse) {
+          recurse_through_hierarchy(.x$uid, uid)
+        }
       }
     })
 }
-
 
 
 
@@ -84,7 +78,7 @@ root_node %>%
   recurse_through_hierarchy("menu")
 
 # Clean the final results.
-sutta_hierarchy <- sutta_hierarchy %>%
+vinaya_hierarchy <- vinaya_hierarchy %>%
   mutate(parent_id = case_when(parent_id == "menu" ~ "",
                                parent_id == "long" ~ "sutta",
                                parent_id == "middle" ~ "sutta",
@@ -128,10 +122,10 @@ append_to_suttaplex_hierarchy <- function(collection) {
     walk(extract_suttaplex_data)
 }
 
-c("dn", "mn", "sn", "an", "kn") %>% 
+c("pli-tv-vi") %>% 
   walk(append_to_suttaplex_hierarchy)
 
-sutta_hierarchy <- sutta_hierarchy %>% 
+vinaya_hierarchy <- vinaya_hierarchy %>% 
   left_join(suttaplex_hierarchy, join_by(id == uid)) %>% 
   mutate(title = if_else(is.na(title), translated_title, title)) %>% 
   select(-translated_title) %>% 
@@ -140,5 +134,5 @@ sutta_hierarchy <- sutta_hierarchy %>%
 
 
 # Save data.
-save(sutta_hierarchy, file = "./data/sutta-hierarchy/sutta_hierarchy.Rda")
+save(vinaya_hierarchy, file = "./data/vinaya-hierarchy/vinaya_hierarchy.Rda")
 
