@@ -6,10 +6,10 @@
 # Execute the following commands at the terminal.
 # Note I am using Windows CMD.
 
-# python sheet_export.py pli-tv-bu-vb bu-vb-trans-en.tsv --include translation+en
-# python sheet_export.py pli-tv-bi-vb bi-vb-trans-en.tsv --include translation+en
-# python sheet_export.py pli-tv-kd kd-trans-en.tsv --include translation+en
-# python sheet_export.py pli-tv-pvr pvr-trans-en.tsv --include translation+en
+# python sheet_export.py pli-tv-bu-vb bu-vb-trans-en.tsv --include translation+en,comment
+# python sheet_export.py pli-tv-bi-vb bi-vb-trans-en.tsv --include translation+en,comment
+# python sheet_export.py pli-tv-kd kd-trans-en.tsv --include translation+en,comment
+# python sheet_export.py pli-tv-pvr pvr-trans-en.tsv --include translation+en,comment
 
 # Now run the following script.
 
@@ -19,17 +19,21 @@ library(readr)
 # NOTE: You will have to change the following paths.
 
 bu_vb_vinaya_data <- read_tsv("./../bilara-data/.scripts/bilara-io/bu-vb-trans-en.tsv") %>% 
-  rename(segment_text = `translation-en-brahmali`) %>% 
-  select(segment_id, segment_text)
+  rename(segment_text = `translation-en-brahmali`,
+         comment_text = `comment-en-brahmali`) %>% 
+  select(segment_id, segment_text, comment_text)
 bi_vb_vinaya_data <- read_tsv("./../bilara-data/.scripts/bilara-io/bi-vb-trans-en.tsv") %>% 
-  rename(segment_text = `translation-en-brahmali`) %>% 
-  select(segment_id, segment_text)
+  rename(segment_text = `translation-en-brahmali`,
+         comment_text = `comment-en-brahmali`) %>% 
+  select(segment_id, segment_text, comment_text)
 kd_vinaya_data <- read_tsv("./../bilara-data/.scripts/bilara-io/kd-trans-en.tsv") %>% 
-  rename(segment_text = `translation-en-brahmali`) %>% 
-  select(segment_id, segment_text)
+  rename(segment_text = `translation-en-brahmali`,
+         comment_text = `comment-en-brahmali`) %>% 
+  select(segment_id, segment_text, comment_text)
 pvr_vinaya_data <- read_tsv("./../bilara-data/.scripts/bilara-io/pvr-trans-en.tsv") %>% 
-  rename(segment_text = `translation-en-brahmali`) %>% 
-  select(segment_id, segment_text)
+  rename(segment_text = `translation-en-brahmali`,
+         comment_text = `comment-en-brahmali`) %>% 
+  select(segment_id, segment_text, comment_text)
 
 raw_vinaya_data <- bu_vb_vinaya_data %>%
   bind_rows(bi_vb_vinaya_data, kd_vinaya_data, pvr_vinaya_data)
