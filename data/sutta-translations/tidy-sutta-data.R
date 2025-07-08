@@ -124,7 +124,6 @@ sutta_data <- sutta_data %>%
     join_by(sutta == id)
   ) %>%
   left_join(sub_id_list, join_by(sutta == sub_id)) %>%
-  # filter(str_detect(segment_id, "sn12.93")) %>% 
   mutate(hierarchy_id = case_when(str_detect(segment_id, "sn12") ~ "sn12.93-213",
                                   str_detect(segment_id, "an1.102-109") ~ "an1.98-139",
                                   str_detect(segment_id, "an1.118-128") ~ "an1.98-139",

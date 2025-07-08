@@ -6,11 +6,29 @@ library(purrr)
 library(tidyr)
 library(readr)
 
-load("./data/vinaya-translations/raw_vinaya_data.Rda")
+load(
+  url(
+    "https://github.com/chaz23/sutta-science/raw/main/data/vinaya-translations/raw_vinaya_data.Rda"
+  )
+)
+load(
+  url(
+    "https://github.com/chaz23/sutta-science/raw/main/data/html/vinaya_html.Rda"
+  )
+)
+
+load(
+  url(
+    "https://github.com/chaz23/sutta-science/raw/main/data/vinaya-hierarchy/vinaya_hierarchy.Rda"
+  )
+)
 
 
-# Function to split segment ID into sutta, section number and segment number.
-split_seg_id <- function (seg_id) {
+
+
+# Take this part from https://github.com/chaz23/sutta-science/blob/main/data/sutta-translations/tidy-sutta-data.R ----
+
+split_seg_id <- function(seg_id) {
   sutta <- str_extract(seg_id, "^.*(?=:)")
   
   num_id <- str_extract(seg_id, "(?<=:).*$")
@@ -22,92 +40,63 @@ split_seg_id <- function (seg_id) {
 }
 
 
-# Vinaya category levels.
-vin_levels <- c(
-  "pli-tv-bi-vb-as",
-  "pli-tv-bi-vb-np",
-  "pli-tv-bi-vb-pc",
-  "pli-tv-bi-vb-pd",
-  "pli-tv-bi-vb-pj",
-  "pli-tv-bi-vb-sk",
-  "pli-tv-bi-vb-ss",
-  "pli-tv-bu-vb-as",
-  "pli-tv-bu-vb-ay",
-  "pli-tv-bu-vb-np",
-  "pli-tv-bu-vb-pc",
-  "pli-tv-bu-vb-pd",
-  "pli-tv-bu-vb-pj",
-  "pli-tv-bu-vb-sk",
-  "pli-tv-bu-vb-ss",
-  "pli-tv-kd" ,
-  "pli-tv-pvr"
-)
-
-
 vinaya_data <- raw_vinaya_data %>%
-
+  # Keep rows belonging to DN, MN, SN and AN.
+  # filter(grepl("(dn|mn|sn|an)[0-9]", segment_id)) %>%
+  
   # Split segment_id into sutta, section number and segment number.
   mutate(segment_id_copy = map_chr(segment_id, split_seg_id)) %>%
-  separate(segment_id_copy, into = c("sutta", "section_num", "segment_num"), sep = "[|]") %>%
+  separate(
+    segment_id_copy,
+    into = c("sutta", "section_num", "segment_num"),
+    sep = "[|]"
+  ) %>%
+  # Extract nikaya (collection) and sutta number.
+  mutate(
+    collection = sub("^([^0-9]*)[0-9].*", "\\1", sutta),
+    sutta_num = str_extract(segment_id, "(?=[0-9]).+(?=:)")
+  )
 
-  # Extract vinaya category.
-  mutate(collection = str_extract(sutta, "(?<=pli-tv-).*?(?=[0-9])")) %>%
 
-  # Extract sutta number.
-  mutate(sutta_num = str_remove(sutta, ".*?(?=[0-9])")) %>%
 
-  # Extract sutta titles.
+# Put it together. ----
 
-  # Segment numbers containing the title for each category is as follows:
-  # pli-tv-bi-vb-as -> [sutta]:0.3
-  # pli-tv-bu-vb-as -> [sutta]:0.3
-  # pli-tv-bi-vb-np -> [sutta]:0.5
-  # pli-tv-bu-vb-np -> [sutta]:0.5
-  # pli-tv-bi-vb-pc -> [sutta]:0.5
-  # pli-tv-bu-vb-pc -> [sutta]:0.5
-  # pli-tv-bi-vb-pd -> [sutta]:0.4
-  # pli-tv-bu-vb-pd -> [sutta]:0.4
-  # pli-tv-bi-vb-pj -> [sutta]:0.4
-  # pli-tv-bu-vb-pj -> [sutta]:0.4
-  # pli-tv-bi-vb-sk -> [sutta]:0.5
-  # pli-tv-bu-vb-sk -> [sutta]:0.5
-  # pli-tv-bi-vb-ss -> [sutta]:0.4
-  # pli-tv-bu-vb-ss -> [sutta]:0.4
-  # pli-tv-bu-vb-ay -> [sutta]:0.4
-  # pli-tv-kd       -> [sutta]:0.3
-  # pli-tv-pvr      -> [sutta]:0.4
+# Because some suttas do not match values in the hierarchy dataset.
+# Eg: an1.1 belongs under an1.1-10
+sub_id_list <- vinaya_hierarchy %>%
+  filter(node_type == "leaf") %>%
+  select(id) %>%
+  filter(str_detect(id, "[0-9]-[0-9]")) %>%
+  mutate(sub_ids = map(id, ~ {
+    range <- str_extract(.x, "(?<=[a-z])[0-9]+-.*$")
+    range_start <- str_split(range, "-")[[1]][1]
+    range_end <- str_split(range, "-")[[1]][2]
+    sub_id_range <- as.numeric(range_start):as.numeric(range_end)
+    base_string <- str_extract(.x, ".*(?<=[a-z])")
+    sub_ids <- paste0(base_string, sub_id_range)
+    tibble(sub_id = sub_ids)
+  })) %>%
+  unnest(cols = sub_ids)
 
-  mutate(title = case_when(grepl("(as|kd)", segment_id) &
-                             section_num == "0" &
-                             segment_num == "3" ~ segment_text,
-                           grepl("(np|pc|sk)", segment_id) &
-                             section_num == "0" &
-                             segment_num == "5" ~ segment_text,
-                           grepl("(pd|pj|ss|ay|pvr)", segment_id) &
-                             section_num == "0" &
-                             segment_num == "5" ~ segment_text,
-                           TRUE ~ NA_character_)) %>%
-  fill(title, .direction = "down") %>%
-  filter(section_num != "0") %>%
-  mutate(title = str_extract(title, "(?=[a-zA-Z]+).*$"),
-         title = str_trim(title)) %>%
 
-  # Remove blank rows.
-  mutate(segment_text = str_trim(segment_text)) %>%
-  filter(segment_text != "") %>%
 
-  # Remove subheaders.
-
-  # The part of the segment ID after the semicolon can have up to 4 dots.
-  # i.e up to 5 separated numerical values.
-  # In all cases it's a subheading when either the last or penultimate separated value is 0.
-  filter(!grepl(".*([:.]0.[0-9]+|[.]0)$", segment_id)) %>%
-
-  # Rearrange data in order of suttas.
-  arrange(factor(str_remove(segment_id, "[0-9].*$"), levels = vin_levels),
-          as.numeric(sutta_num))
+vinaya_data <- vinaya_data %>%
+  left_join(vinaya_html, join_by(segment_id)) %>%
+  left_join(
+    vinaya_hierarchy %>%
+      select(id, node_type),
+    join_by(sutta == id)
+  ) %>%
+  left_join(sub_id_list, join_by(sutta == sub_id)) %>%
+  mutate(hierarchy_id = case_when(is.na(node_type) ~ id,
+                                  .default = sutta
+  )) %>%
+  select(-id, -node_type) %>%
+  filter(!is.na(segment_text)) %>%
+  rename(
+    scripture = sutta,
+    scripture_num = sutta_num
+  )
 
 # Save to disk.
 save(vinaya_data, file = "./data/vinaya-translations/vinaya_data.Rda")
-
-write_tsv(vinaya_data, "./data/vinaya-translations/vinaya_data.tsv")
